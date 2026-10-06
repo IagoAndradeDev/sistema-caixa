@@ -3,35 +3,23 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
     <title>Verificar caixa</title>
 </head>
 <body>
-    <header class="cabeçalho">
-        <div class="data">
-            <p>01/01/2026</p>
-        </div>
-    </header>
-
-    <section class="menu">
-        <div class="titulo">
-            <h1>CAIXA</h1>
-        </div>
-        <div class="abas">
-            <label>MENU</label>
-            <div class="inicio">
-                <label>Início</label>
-            </div>
-            <div class="notas">
-                <label>Notas</label>
-            </div>
-            <div class="relatorio">
-                <label>Relatório</label>
-            </div>
-        </div>
-    </section>
     
-    <main class="container">
-        <div class="title">
+   <aside class="menu">
+        <h2>Caixa</h2>
+
+        <nav>
+            <a href="#">Início</a>
+            <a href="#">Notas</a>
+            <a href="#">Relatórios</a>
+        </nav>
+    </aside>
+    
+    <main class="conteudo">
+        <header class="cabeçalho">
             <div class="texto">
                 <h1>Verificação de Caixa</h1>
                 <p>Insira os arquivos corretamente para conferir os valores do dia.</p>
@@ -39,8 +27,21 @@
             <div class="data">
                 <p>01/01/2026</p>
             </div>
-        </div>
-        <div class="valores">
+        </header>
+        <section class="arquivos">
+            <h2>Arquivos</h2>
+            <div class="nota-sistema">
+                <h2>Notinhas</h2>
+                <input type="file">
+                <p>Ex: sistema29.png</p>
+            </div>
+            <div class="nota-maquina">
+                <h2>Maquininha</h2>
+                <input type="file">
+                <p>Ex: sistema29.png</p>
+            </div>
+        </section>
+        <section class="valores">
             <div class="sistema">
                 <label>Valores Sistema</label>
                 <div class="stm-dinheiro">
@@ -75,8 +76,8 @@
                     <p>R$ 0,00</p>
                 </div>
             </div>
-        </div>
-        <div class="fechamentos">
+        </section>
+        <section class="fechamentos">
             <label>Fechamentos</label>
             <div class="dados">
                 <div class="fmt-caixa-anterior">
@@ -106,8 +107,8 @@
                     <p>R$ 0,00</p>
                 </div>
             </div>
-        </div>
-        <div class="botoes">
+        </section>
+        <section class="botoes">
             <div class="btn-ajuste">
                 <button>Ajustar</button>
             </div>
@@ -117,8 +118,7 @@
             <div class="btn-voltar">
                 <button>Voltar</button>
             </div>
-        </div>
+        </section>
     </main>
-
 </body>
 </html>
