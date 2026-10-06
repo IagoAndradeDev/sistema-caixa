@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up</title>
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css'rel='stylesheet'> 
+    <link rel="stylesheet" href="https://unpkg.com/@fortawesome/fontawesome-free@6.5.2/css/all.min.css">
+    <link rel="stylesheet" href="/signup/signup.css">
+</head>
+<body>
+    <main class="container">
+        <div class="container-sign-up">
+            <div class="title-sign">
+                    <h1>Sign Up</h1>
+            </div>
+            <div class="box-sign-user">
+                <i class="bx bxs-user"></i>
+                <input type="text" placeholder="User" oninput="this.value = this.value.replace(/[^a-zA-Z0-9._-]/g, '')">
+            </div>
+            <div class="box-sign-email">
+                <i class="bx bx-envelope"></i>
+                <input type="email" placeholder="Email" oninput="this.value = this.value.replace(/\s/g, '')">
+            </div>
+            <div class="box-sign-password">
+                <i class="bx bxs-lock"></i>
+                <input type="password" placeholder="Password" oninput="this.value = this.value.replace(/\s/g, '')">
+            </div>
+            <div class="button-sign-up">
+                <button onclick="criarConta()">Sign Up</button>
+            </div>
+            <div class="log-in">
+                <label>Already have an account?</label>
+                <a href="../login/login.html">Log In</a>
+            </div>
+        </div>
+    </main>
+<script src="/signup/signup.js"></script>
+</body>
+</html>

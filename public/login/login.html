@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css'rel='stylesheet'> 
+    <link rel="stylesheet" href="https://unpkg.com/@fortawesome/fontawesome-free@6.5.2/css/all.min.css">
+    <link rel="stylesheet" href="/login/login.css">
+</head>
+<body>
+    <main class="container">
+        <div class="container-login" >
+            <div class="title">
+                <h1>Log In</h1>
+            </div>
+            <div class="box-user">
+                <i class="bx bxs-user"></i>
+                <input type="text" placeholder="User" oninput="this.value = this.value.replace(/[^a-zA-Z0-9._-]/g, '')">
+            </div>
+            <div class="box-password">
+                <i class="bx bxs-lock"></i>
+                <input type="password" placeholder="Password" oninput="this.value = this.value.replace(/\s/g, '')">
+            </div>
+            <div class="button-login">
+                <button onclick="login()">Log in</button>
+            </div>
+            <div class="recover-password">
+                <label>Forgot password?</label>
+            </div>
+        </div>
+    </main>
+<script src="/login/login.js"></script>
+</body>
+</html>

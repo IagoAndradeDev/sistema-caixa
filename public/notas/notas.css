@@ -1,0 +1,212 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+body {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #f9fafb;
+    font-family: "Poppins", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+
+/* ESTRUTURA DAS DUAS PAGINAS */
+
+.caixa {
+    width: 1000px;
+    padding: 30px;
+    background: #ffffff;
+    color: #111827;
+    border-radius: 18px;
+    box-shadow:0 20px 50px rgba(0, 0, 0, 0.35);
+}
+
+.cabecalho {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 25px;
+}
+
+.cabecalho h1 {
+    font-size: 20px;
+}
+
+.cabecalho p {
+    color: #2b2b2c;
+    font-size: 15px;
+}
+
+.icone {
+    width: 52px;
+    height: 52px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #c4e9d2;
+    border-radius: 8px;
+    font-size: 26px;
+}
+
+
+/* TOTAL E DATA */
+
+.total {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 18px;
+    margin-bottom: 25px;
+    background: #f0fdf4;
+    border: 1px solid #0be060;
+    border-radius: 8px;
+}
+
+.total span {
+    color: #166534;
+    font-size: 14px;
+}
+
+.total strong {
+    color: #15803d;
+    font-size: 22px;
+}
+
+
+/* GRUPOS */
+
+.lista {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;
+}
+
+.grupo {
+    padding: 10px;
+    background: #f8fafc;
+    border: 1px solid #e5e7eb;
+    border-radius: 8px;
+}
+
+.grupo h2 {
+    font-size: 20px;
+    margin-bottom: 10px;
+    color: #000;
+    text-align: center;
+}
+
+
+/* RESULTADO */
+
+.resultado {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 10px;
+    padding: 18px;
+    background: #f0fdf4;
+    border: 1px solid #0be060;
+    border-radius: 8px;
+    color: white;
+}
+
+.resultado span {
+    color: #166534;
+    font-size: 14px;
+}
+
+.resultado strong {
+    color: #15803d;
+    font-size: 22px;
+}
+
+/* ______________ PAGINA NOTAS ___________________ */
+
+/* INPUT */
+.linha-notas  {
+    display: grid;
+    grid-template-columns: 90px 1fr 100px;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 10px;
+}
+
+
+.linha-notas input {
+    width: 100%;
+    height: 40px;
+    padding: 0 12px;
+    border: 1px solid #d1d5db;
+    border-radius: 6px;
+    outline: none;
+    font-size: 16px;
+    background: white;
+    transition: 0.2s;
+}
+
+.linha-notas input:focus {
+    border-color: #21da65;
+    box-shadow:
+        0 0 0 3px rgba(22, 163, 74, 0.12);
+}
+
+
+/* TODOS OS BOTOES */
+
+.zerar, .continuar {
+    width: 100%;
+    height: 45px;
+    margin-top: 10px;
+    border: none;
+    border-radius: 8px;
+    background: #cb101f;
+    color: white;
+    font-size: 15px;
+    font-family: "Poppins", sans-serif;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.continuar:disabled {
+    background-color: #ca0a0a;
+    color: #cccccc;
+    cursor: not-allowed;
+    opacity: 0.7;
+}
+
+.zerar:hover , .continuar:hover {
+    background: #4d4c4e;
+    transform: translateY(-1px);
+}
+
+.zerar:active , .continuar:active {
+    transform: translateY(0);
+}
+
+/* RESPONSIVO */
+
+@media (max-width: 600px) {
+
+    body {
+        padding: 15px;
+        align-items: flex-start;
+    }
+
+    .caixa {
+        width: 100%;
+        margin-top: 20px;
+        padding: 20px;
+    }
+
+    .lista {
+        grid-template-columns: 1fr;
+    }
+
+}

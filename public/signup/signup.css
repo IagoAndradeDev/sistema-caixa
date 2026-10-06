@@ -1,0 +1,99 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;900&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+}
+
+body {
+    width: 100vw;
+    height: 100vh;
+}
+
+.container {
+    width: 100%;
+    height: 100%;
+    display: flex;
+}
+
+
+.container-sign-up {
+    margin: auto;
+}
+
+.title-sign {
+    width: 249px;
+    height: 128px;
+    margin: 10px;
+    font-size: 30px;
+    color: #171725;
+}
+
+.box-sign-user, .box-sign-password, .box-sign-email {
+    position: relative;
+    width: 403px;
+    height: 45px;
+    margin: 10px;
+}
+
+.box-sign-user input, .box-sign-password input, .box-sign-email input {
+    width: 100%;
+    height: 100%;
+    border: 1px solid #E0E2E9;
+    border-radius: 8px;
+    background-color: transparent;
+    font-size: 16px;
+    padding-left: 55px;
+}
+
+.box-sign-user input::placeholder , .box-sign-password input::placeholder, .box-sign-email input::placeholder {
+    color: #969AB8;
+}
+
+
+.box-sign-user i, .box-sign-password i, .box-sign-email i{
+    position: absolute;
+    font-size: 22px;
+    left: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #969AB8;
+}
+
+.button-sign-up button {
+    width: 403px;
+    height: 47px;
+    margin: 10px;
+    border: none;
+    border-radius: 8px;
+    background-color: #0062FF;
+    cursor: pointer;
+    color: white;
+    font-weight: 600;
+}
+
+.button-sign-up button:hover {
+    opacity: 0.8;
+}
+
+
+.log-in {
+    margin: 20px 10px;
+}
+
+.log-in label {
+    font-size: 15px;
+    color: #969AB8;
+}
+
+.log-in a {
+    cursor: pointer;
+    text-decoration: none;
+    color: #0062FF;
+}
+
+.log-in a:hover {
+    opacity: 0.6;
+}

@@ -1,0 +1,115 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;900&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+}
+
+body {
+    width: 100vw;
+    height: 100vh;
+}
+
+.container {
+    width: 100%;
+    height: 100%;
+    display: flex;
+}
+
+.container-login {
+    margin: auto;
+}
+
+.title {
+    width: 249px;
+    height: 128px;
+    margin: 10px;
+    font-size: 30px;
+    color: #171725;
+}
+
+.box-user, .box-password {
+    position: relative;
+    width: 403px;
+    height: 45px;
+    margin: 10px;
+}
+
+.box-user input, .box-password input {
+    width: 100%;
+    height: 100%;
+    border: 1px solid #E0E2E9;
+    border-radius: 8px;
+    background-color: transparent;
+    font-size: 16px;
+    padding-left: 55px;
+}
+
+.box-user input::placeholder , .box-password input::placeholder{
+    color: #969AB8;
+}
+
+
+.box-user i, .box-password i {
+    position: absolute;
+    font-size: 22px;
+    left: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #969AB8;
+}
+
+.button-login button {
+    width: 403px;
+    height: 47px;
+    margin: 10px;
+    border: none;
+    border-radius: 8px;
+    background-color: #0062FF;
+    cursor: pointer;
+    color: white;
+    font-weight: 600;
+}
+
+.button-login button:hover {
+    opacity: 0.8;
+}
+
+.recover-password {
+    width: 403px;
+    height: 24px;
+    margin: 10px;
+    text-align: right;
+    cursor: pointer;
+}
+
+.recover-password label {
+    color: #0062FF;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.recover-password label:hover {
+    opacity: 0.6;
+}
+
+.sign-up {
+    margin: 20px 10px;
+}
+
+.sign-up label {
+    font-size: 15px;
+    color: #969AB8;
+}
+
+.sign-up a {
+    cursor: pointer;
+    text-decoration: none;
+    color: #0062FF;
+}
+
+.sign-up a:hover {
+    opacity: 0.6;
+}
