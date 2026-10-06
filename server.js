@@ -16,7 +16,7 @@ app.use(express.urlencoded({ extended: true }));
 app.use(express.static("public"));
 
 app.get("/", (req, res) => {
-    res.sendFile(__dirname + "/public/signup/signup.html");
+    res.sendFile(__dirname + "/public/login/login.html");
 });
 
 // ==========================
