@@ -15,12 +15,153 @@ body {
     display: flex;
 }
 
-.cabeçalho {
-
-}
 
 .menu {
     width: 15%;
     height: 100%;
     background-color: #fdfdfc;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.menu h2 {
+    padding-left: 60px;
+    margin: 15px 0px;
+    font-size: 20px;
+}
+
+.menu p {
+    font-size: 12px;
+    font-weight: 600;
+    color: #6d6d6d;
+    padding-left: 20px;
+}
+
+.menu nav {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.menu a {
+    width: 90%;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    padding-left: 50px;
+    font-size: 14px;
+    font-weight: 500;
+    color: #6d6d6d;
+    text-decoration: none;
+}
+
+.menu a:is(:hover, :active) {
+    background-color: rgba(233, 235, 233, 0.6);
+    color: #00582c;
+    border-radius: 8px;
+    opacity: 0.6;
+}
+
+.conteudo {
+    width: calc(100% - 20px);
+    height: calc(100% - 20px);
+    margin: 10px;
+}
+
+.cabeçalho {
+    width: 100%;
+    height: 60px;
+    display: flex;
+    align-items: center;
+}
+
+.texto h1 {
+    font-size: 25px;
+}
+
+.texto p {
+    font-size: 14px;
+    font-weight: 500;
+    color: #6d6d6d;
+}
+
+.data {
+    width: 160px;
+    height: 40px;
+    background-color: rgba(0, 200, 0, 0.1);
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-left: 30px;
+    margin: 0px 0px 0px auto;
+}
+
+.data p {
+    font-size: 15px;
+    font-weight: 600;
+    color: #00582c;
+}
+
+.arquivos {
+    width: 100%;
+    background-color: #fdfdfc;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+
+}
+
+.arquivos h2 {
+    font-size: 18px;
+    margin: 10px;
+    padding-left: 10px;
+}
+
+.conteiner-nota {
+    display: flex;
+}
+
+.nota-sistema, .nota-maquina {
+    width: 100%;
+    margin: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.nota-sistema h3, .nota-maquina h3 {
+    padding-left: 40px;
+}
+
+
+.nota-input input {
+    width: 100%;
+    height: 60px;
+    border: 1px solid #e9ebe9;
+    border-radius: 10px;
+    color: #6d6d6d;
+    font-size: 12px;
+    padding: 10px;
+    cursor: pointer;
+}
+
+.nota-input input[type="file"]::file-selector-button {
+    width: 30%;
+    height: 40px;
+    border: none;
+    border-radius: 15px;
+    font-family: "Plus Jakarta Sans", sans-serif;
+    font-size: 12px;
+    font-weight: 600;
+    padding-left: 30px;
+    cursor: pointer;
+    background-color: rgba(233, 235, 233, 0.4);
+}
+
+.nota-sistema p, .nota-maquina p {
+    font-size: 13px;
+    color: #6d6d6d;
 }
