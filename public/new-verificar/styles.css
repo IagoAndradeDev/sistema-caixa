@@ -26,11 +26,18 @@ body {
 }
 
 .menu h2 {
-    padding-left: 30%;
+    padding-left: 5%;
     margin: 15px 0px;
     font-size: 18px;
     font-weight: 800;
 }
+
+.title {
+    display: flex;
+    align-items: center;
+    padding-left: 15%;
+}
+
 
 .menu p {
     font-size: 10px;
@@ -51,6 +58,7 @@ body {
     height: 30px;
     display: flex;
     align-items: center;
+    gap: 10px;
     padding-left: 25%;
     font-size: 14px;
     font-weight: 500;
@@ -58,11 +66,91 @@ body {
     text-decoration: none;
 }
 
+.icon-data {
+    width: 20px;
+    height: 20px;
+    display: inline-block;
+    background-color: #6d6d6d;
+    mask: url("/files/icons/data.svg") center / contain no-repeat;
+    -webkit-mask: url("/files/icons/data.svg") center / contain no-repeat;
+}
+
+.icon-home {
+    width: 20px;
+    height: 20px;
+    display: inline-block;
+    background-color: #6d6d6d;
+    mask: url("/files/icons/home.svg") center / contain no-repeat;
+    -webkit-mask: url("/files/icons/home.svg") center / contain no-repeat;
+}
+
+.icon-sistema {
+    width: 20px;
+    height: 20px;
+    display: inline-block;
+    background-color: #000000;
+    mask: url("/files/icons/sistema.svg") center / contain no-repeat;
+    -webkit-mask: url("/files/icons/sistema.svg") center / contain no-repeat;
+}
+
+.icon-cartao {
+    width: 20px;
+    height: 20px;
+    display: inline-block;
+    background-color: #000000;
+    mask: url("/files/icons/cartao.svg") center / contain no-repeat;
+    -webkit-mask: url("/files/icons/cartao.svg") center / contain no-repeat;
+}
+
+.icon-pix {
+    width: 20px;
+    height: 20px;
+    display: inline-block;
+    background-color: #000000;
+    mask: url("/files/icons/pix.svg") center / contain no-repeat;
+    -webkit-mask: url("/files/icons/pix.svg") center / contain no-repeat;
+}
+
+.icon-dinheiro {
+    width: 20px;
+    height: 20px;
+    display: inline-block;
+    background-color: #000000;
+    mask: url("/files/icons/dinheiro.svg") center / contain no-repeat;
+    -webkit-mask: url("/files/icons/dinheiro.svg") center / contain no-repeat;
+}
+
+.icon-debito {
+    width: 20px;
+    height: 20px;
+    display: inline-block;
+    background-color: #000000;
+    mask: url("/files/icons/debito.svg") center / contain no-repeat;
+    -webkit-mask: url("/files/icons/debito.svg") center / contain no-repeat;
+}
+
+.icon-ajustes {
+    width: 20px;
+    height: 20px;
+    display: inline-block;
+    background-color: #000000;
+    mask: url("/files/icons/ajustes.svg") center / contain no-repeat;
+    -webkit-mask: url("/files/icons/ajustes.svg") center / contain no-repeat;
+}
+
+.icon-sucesso {
+    width: 20px;
+    height: 20px;
+    display: inline-block;
+    background-color: #000000;
+    mask: url("/files/icons/sucesso.svg") center / contain no-repeat;
+    -webkit-mask: url("/files/icons/sucesso.svg") center / contain no-repeat;
+}
+
 .menu a:is(:hover, :active) {
     background-color: rgba(233, 235, 233, 0.6);
-    color: #00582c;
+    transition: background-color 0.2s ease;
     border-radius: 8px;
-    opacity: 0.6;
 }
 
 .conteudo {
@@ -99,7 +187,8 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
-    padding-left: 30px;
+    gap: 10px;
+    padding-left: 10px;
     margin: 0px 0px 0px auto;
 }
 
@@ -107,6 +196,15 @@ body {
     font-size: 12px;
     font-weight: 800;
     color: #00582c;
+}
+
+.data span {
+    width: 20px;
+    height: 20px;
+    display: inline-block;
+    background-color: #00582c;
+    mask: url("/files/icons/data.svg") center / contain no-repeat;
+    -webkit-mask: url("/files/icons/data.svg") center / contain no-repeat;
 }
 
 .arquivos {
@@ -173,11 +271,30 @@ body {
     gap: 5px;
 }
 
-.box-arquivos h3, .box-valores-sistema h3, .box-valores-maquina h3, .box-valores-ajustes h3, .box-fechamentos h3 {
-    font-size: 16px;
+.box-valores-sistema h3, .box-valores-maquina h3, .box-valores-ajustes h3, .box-fechamentos h3 {
+    font-size: 15px;
     font-weight: 600;
-    margin: 10px;
-    padding-left: 40px;
+}
+
+.titulo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin: 10px 10px;
+}
+
+.back-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(0, 100, 0, 0.100);
+    width: 30px;
+    height: 30px;
+    border-radius: 10px;
+}
+
+.back-icon span {
+    background-color: #00582c;
 }
 
 .nota-sistema input, .nota-maquina input {
@@ -248,7 +365,7 @@ body {
 }
 
 .linha .text {
-    padding-left: 60px;
+    padding-left: 10px;
     color: #3d3d3d;
 }
 
@@ -319,6 +436,7 @@ body {
     font-weight: 600;
     background-color: #00582c;
     cursor: pointer;
+    transition: transform 0.2s ease;
 }
 
 
@@ -348,6 +466,7 @@ body {
     transform: scale(0.95);
     border: 1px solid #00582c;
     color: #00582c;
+    
 }
 
 
@@ -477,4 +596,3 @@ body {
 .motivo-cancelar:active , .motivo-confirmar:active {
     transform: translateY(0);
 }
-
