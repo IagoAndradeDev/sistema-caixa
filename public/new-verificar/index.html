@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://js.puter.com/v2/"></script>
+    <link rel="stylesheet" href="styles.css">
+    <title>Verificar caixa</title>
+</head>
+<body>
+    
+   <aside class="menu">
+        <h2>Caixa</h2>
+        <p>MENU</p>
+        <nav>
+            <a href="#">Início</a>
+            <a href="/notas/notas.html">Notas</a>
+            <a href="#">Relatórios</a>
+        </nav>
+    </aside>
+    
+    <main class="conteudo">
+        <header class="cabeçalho">
+            <div class="texto">
+                <h1>Verificação de Caixa</h1>
+                <p>Insira os arquivos corretamente para conferir os valores do dia.</p>
+            </div>
+            <div class="data">
+                <p>01/01/2026</p>
+            </div>
+        </header>
+        <section class="arquivos">
+            <h2>Arquivos</h2>
+            <div class="conteiner-nota">
+                <div class="box-arquivos">
+                    <h3>Notinhas</h3>
+                    <div class="nota-sistema">
+                        <input type="file">
+                    </div>
+                    <p>Ex: sistema.jpeg</p>
+                </div>
+                <div class="box-arquivos">
+                    <h3>Maquininha</h3>
+                    <div class="nota-maquina">
+                        <input type="file">
+                    </div>
+                    <p>Ex: maquina.jpeg</p>
+                </div>
+            </div>
+        </section>
+        <section class="valores">
+            <div class="box-valores-sistema">
+                <h3>Valores Sistema</h3>
+                <div class="box-linha">
+                    <div class="linha">
+                        <p class="text">Dinheiro</p>
+                        <p class="number-dinheiro">R$ 0,00</p>
+                    </div>
+                    <div class="linha">
+                        <p class="text">Pix</p>
+                        <p class="number-pix">R$ 0,00</p>
+                    </div>
+                    <div class="linha">
+                        <p class="text">Crédito</p>
+                        <p class="number-credito">R$ 0,00</p>
+                    </div>
+                    <div class="linha">
+                        <p class="text">Débito</p>
+                        <p class="number-debito">R$ 0,00</p>
+                    </div>
+                </div>
+            </div>
+            <div class="box-valores-maquina">
+                <h3>Valores Máquina</h3>
+                <div class="box-linha">
+                    <div class="linha">
+                        <p class="text">Pix</p>
+                        <p class="number-pix">R$ 0,00</p>
+                    </div>
+                    <div class="linha">
+                        <p class="text">Crédito</p>
+                        <p class="number-credito">R$ 0,00</p>
+                    </div>
+                    <div class="linha">
+                        <p class="text">Débito</p>
+                        <p class="number-debito">R$ 0,00</p>
+                    </div>
+                </div>
+            </div>
+            <div class="box-valores-ajustes">
+                <h3>Valores Ajustados</h3>
+                <div class="box-linha-ajustes">
+                    <div class="linha">
+                        <p class="text">Dinheiro</p>
+                        <p class="number-dinheiro">R$ 0,00</p>
+                    </div>
+                    <div class="linha">
+                        <p class="text">Pix</p>
+                        <p class="number-pix">R$ 0,00</p>
+                    </div>
+                    <div class="linha">
+                        <p class="text">Crédito</p>
+                        <p class="number-credito">R$ 0,00</p>
+                    </div>
+                    <div class="linha">
+                        <p class="text">Débito</p>
+                        <p class="number-debito">R$ 0,00</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="fechamentos">
+                <div class="box-fechamentos">
+                    <h3>Fechamentos</h3>
+                    <div class="box-linha-fechamentos">
+                        <div class="linha-fechamentos">
+                            <p>Caixa anterior</p>
+                            <p class="number-caixa-anterior">R$ 0,00</p>
+                        </div>
+                        <div class="linha-fechamentos">
+                            <p>Caixa esperado</p>
+                            <p class="number-caixa-esperado">R$ 0,00</p>
+                        </div>
+                        <div class="linha-fechamentos">
+                            <p>Caixa atual</p>
+                            <p class="number-caixa-atual">R$ 0,00</p>
+                        </div>
+                        <div class="linha-fechamentos">
+                            <p>Dinheiro</p>
+                            <p class="number-dinheiro">R$ 0,00</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="box-resultado">
+                    <div class="box-valor-final">
+                        <div class="valor-final">
+                            <p class="text">Valor Final</p>
+                            <p class="number">R$ 0,00</p>
+                        </div>
+                    </div>
+                <div class="box-valor-liquido">
+                        <div class="valor-liquido">
+                            <p class="text">Vendas Liquidas</p>
+                            <p class="number">R$ 0,00</p>
+                        </div>
+                </div>
+        </section>
+        <section class="botoes">
+            <div class="btn-ajuste">
+                <button>Ajustar</button>
+            </div>
+            <div class="btn-fechar">
+                <button>Fechar</button>
+            </div>
+            <div class="btn-voltar">
+                <button>Voltar</button>
+            </div>
+        </section>
+            <!-- TELA DE CARREGAMENTO -->
+        <div id="Carregamento" class="Carregamento" style="display: none;">
+            <div class="spinner"></div>
+            <h2>✨ Preparando tudo para você...</h2>
+            <p id="Carregamento-text">A IA está analisando suas informações</p>
+        </div>
+
+                <!-- PAINEL DE MOTIVOS DE FALTA DE CAIXA -->
+        <div id="ajusteCaixa" class="ajuste-caixa">
+            <div class="ajuste-conteudo">
+                <h3>Diferença no Caixa</h3>
+                <p>Foi identificada uma diferença de:<strong id="valorDiferenca">R$ 0,00</strong></p>
+                <label for="motivoDiferenca">Motivo:</label>
+                <select id="motivoDiferenca">
+                    <option value="">Selecione o motivo</option>
+                    <option value="Deposito">Deposito</option>
+                    <option value="Despesa">Despesa</option>
+                    <option value="Erro de Troco">Erro de troco</option>
+                    <option value="Cancelamento">Cancelamento</option>
+                    <option value="Outro">Outro</option>
+                </select>
+
+                <label for="valorGasto">Valor gasto/ajuste:</label>
+                <input
+                    type="number"
+                    id="valorGasto"
+                    step="0.01"
+                    min="0"
+                    placeholder="0,00"
+                    autocomplete="off"
+                    autocorrect="off"
+                    autocapitalize="of"
+                    spellcheck="false"
+                >
+
+                <label for="observacaoDiferenca">Observação:</label>
+                <textarea id="observacaoDiferenca" placeholder="Descreva o ocorrido..."></textarea>
+
+                <!-- BOTOES DENTRO DO PAINEL DE MOTIVOS -->
+
+                <button id="confirmarAjuste" onclick="confirmarAjusteCaixa()" class="motivo-confirmar">
+                    Confirmar ajuste
+                </button>
+
+                <button id="cancelarAjuste" onclick="cancelarAjusteCaixa()"class="motivo-cancelar">
+                    Cancelar
+                </button>
+            </div>
+        </div>
+    </main>
+<script src="verificar.js"></script>
+</body>
+</html>

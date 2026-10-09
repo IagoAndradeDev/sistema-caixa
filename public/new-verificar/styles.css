@@ -1,0 +1,480 @@
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap');
+
+
+* {
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+    font-family: "Plus Jakarta Sans", sans-serif;
+}
+
+body {
+    width: 100vw;
+    height: 100vh;
+    background-color: #f1f1f1;
+    display: flex;
+}
+
+
+.menu {
+    width: 15%;
+    height: 100%;
+    background-color: #f8f8f8;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.menu h2 {
+    padding-left: 30%;
+    margin: 15px 0px;
+    font-size: 18px;
+    font-weight: 800;
+}
+
+.menu p {
+    font-size: 10px;
+    font-weight: 800;
+    color: #6d6d6d;
+    padding-left: 15%;
+}
+
+.menu nav {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.menu a {
+    width: 90%;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    padding-left: 25%;
+    font-size: 14px;
+    font-weight: 500;
+    color: #6d6d6d;
+    text-decoration: none;
+}
+
+.menu a:is(:hover, :active) {
+    background-color: rgba(233, 235, 233, 0.6);
+    color: #00582c;
+    border-radius: 8px;
+    opacity: 0.6;
+}
+
+.conteudo {
+    width: calc(100% - 20px);
+    height: calc(100% - 20px);
+    margin: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.cabeçalho {
+    width: 100%;
+    height: 60px;
+    display: flex;
+    align-items: center;
+}
+
+.texto h1 {
+    font-size: 25px;
+}
+
+.texto p {
+    font-size: 12px;
+    font-weight: 500;
+    color: #6d6d6d;
+}
+
+.data {
+    width: 160px;
+    height: 40px;
+    background-color: rgba(0, 200, 0, 0.1);
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-left: 30px;
+    margin: 0px 0px 0px auto;
+}
+
+.data p {
+    font-size: 12px;
+    font-weight: 800;
+    color: #00582c;
+}
+
+.arquivos {
+    width: 100%;
+    background-color: #f8f8f8;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+}
+
+.arquivos h2, .fechamentos h2 {
+    font-size: 18px;
+    font-weight: 800;
+    margin: 10px;
+    padding-left: 10px;
+}
+
+.valores {
+    width: 100%;
+    background-color: #f8f8f8;
+    border-radius: 10px;
+    display: flex;
+}
+
+.fechamentos {
+    width: 100%;
+    background-color: #f8f8f8;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+}
+
+.conteiner-nota {
+    display: flex;
+}
+
+.box-arquivos {
+    width: 100%;
+    margin: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.box-valores-sistema, .box-valores-maquina, .box-valores-ajustes {
+    width: 100%;
+    margin: 10px;
+    display: flex;
+    flex-direction: column;
+    background-color: rgba(0, 100, 0, 0.06);
+    border-radius: 8px;
+}
+
+.box-fechamentos {
+    margin: 10px;
+    display: flex;
+    flex-direction: column;
+}
+
+.box-resultado {
+    margin: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.box-arquivos h3, .box-valores-sistema h3, .box-valores-maquina h3, .box-valores-ajustes h3, .box-fechamentos h3 {
+    font-size: 16px;
+    font-weight: 600;
+    margin: 10px;
+    padding-left: 40px;
+}
+
+.nota-sistema input, .nota-maquina input {
+    width: 100%;
+    height: 60px;
+    border: 1px solid #e7e7e7;
+    border-radius: 10px;
+    color: #6d6d6d;
+    font-size: 12px;
+    padding: 10px;
+    cursor: pointer;
+}
+
+.nota-sistema input[type="file"]::file-selector-button, .nota-maquina input[type="file"]::file-selector-button {
+    width: 30%;
+    height: 40px;
+    border: none;
+    border-radius: 15px;
+    font-family: "Plus Jakarta Sans", sans-serif;
+    font-size: 12px;
+    font-weight: 600;
+    padding-left: 30px;
+    cursor: pointer;
+    background-color: rgba(233, 235, 233, 0.4);
+}
+
+
+.box-arquivos p {
+    font-size: 12px;
+    color: #6d6d6d;
+}
+
+.box-linha {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+.box-linha-fechamentos {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    margin-left: 10px;
+}
+
+.linha-fechamentos {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 45px;
+    font-size: 12px;
+    font-weight: 500;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.040);
+}
+
+.linha {
+    width: 90%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 45px;
+    font-size: 12px;
+    font-weight: 500;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.040);
+}
+
+.linha .text {
+    padding-left: 60px;
+    color: #3d3d3d;
+}
+
+
+.number-dinheiro, .number-pix, .number-credito, .number-debito {
+    padding-right: 30px;
+    font-weight: 700;
+    color: #00582c;
+    margin-left: auto;
+}
+
+.number-caixa-anterior, .number-caixa-esperado, .number-caixa-atual {
+    padding-right: 30px;
+    font-weight: 700;
+    color: #00582c;
+    margin-left: auto;
+}
+
+
+.valor-final, .valor-liquido {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 45px;
+    border-radius: 10px;
+    background-color: rgba(0, 100, 0, 0.100);
+}
+
+.valor-final .text, .valor-liquido .text {
+    padding-left: 60px;
+    font-size: 14px;
+    font-weight: 800;
+    color: #00582c;
+}
+
+.valor-final .number, .valor-liquido .number {
+    padding-right: 30px;
+    font-size: 14px;
+    font-weight: 800;
+    color: #00582c;
+    margin-left: auto;
+}
+
+
+.botoes {
+    width: 100%;
+    height: 80px;
+    background-color: #f8f8f8;
+    border-radius: 10px;
+    display: flex;    
+}
+
+.btn-ajuste , .btn-fechar , .btn-voltar  {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    margin: 5px 10px;
+}
+
+.btn-fechar button {
+    width: 100%;
+    height: 40px;  
+    color:#f8f8f8;
+    border: none;
+    border-radius: 8px;
+    font-size: 14px;
+    font-weight: 600;
+    background-color: #00582c;
+    cursor: pointer;
+}
+
+
+.btn-ajuste button {
+    width: 100%;
+    height: 40px;  
+    color:#00582c;
+    border: 1px solid #00582c;
+    border-radius: 8px;
+    font-size: 14px;
+    font-weight: 600;
+    background-color: #f8f8f8;
+    cursor: pointer;
+    transition: transform 0.2s ease;
+}
+
+
+.btn-ajuste button:hover, .btn-voltar button:hover {
+    background-color: rgba(0, 100, 0, 0.100);
+    transform: scale(0.95);
+    border: 1px solid #00582c;
+    color: #00582c;
+}
+
+.btn-fechar button:hover {
+    background-color: rgba(0, 100, 0, 0.400);
+    transform: scale(0.95);
+    border: 1px solid #00582c;
+    color: #00582c;
+}
+
+
+
+.btn-ajuste button:active, .btn-fechar button:active, .btn-voltar button:active {
+    transform: scale(0.90);
+}
+
+
+.btn-voltar button {
+    width: 100%;
+    height: 40px;  
+    color: #3d3d3d;
+    border: 1px solid #00582c;
+    border-radius: 8px;
+    font-size: 14px;
+    font-weight: 600;
+    background-color: #e7e7e7;
+    cursor: pointer;
+    transition: transform 0.2s ease;
+}
+
+/* TELA DE CARREGAMENTO */
+.Carregamento {
+    position: fixed;
+    inset: 0;
+    background: #fff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    z-index: 9999;
+    font-family: Arial, sans-serif;
+}
+
+.spinner {
+    width: 50px;
+    height: 50px;
+    border: 5px solid #eee;
+    border-top: 5px solid #6c5ce7;
+    border-radius: 50%;
+    animation: girar 1s linear infinite;
+    margin-bottom: 20px;
+}
+
+@keyframes girar {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+.Carregamento h2 {
+    margin: 0 0 10px;
+    color: #222;
+}
+
+.Carregamento p {
+    color: #777;
+}
+
+/* CAIXA DE AJUSTE */
+.ajuste-caixa {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.6);
+    
+    align-items: center;
+    justify-content: center;
+    
+    z-index: 9999;
+}
+
+.ajuste-caixa.ativo {
+    display: flex;
+}
+
+.ajuste-conteudo {
+    width: 400px;
+    max-width: 90%;
+    padding: 25px;
+
+    background: white;
+    border-radius: 12px;
+
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    color: #060607;
+}
+
+.ajuste-conteudo input,
+.ajuste-conteudo select,
+.ajuste-conteudo textarea {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-family: "Poppins", sans-serif;
+    font-size: 16px;
+    
+}
+
+.ajuste-conteudo textarea {
+    min-height: 80px;
+    resize: vertical;
+}
+
+.motivo-cancelar, .motivo-confirmar {
+    width: 100%;
+    height: 45px;
+    border: none;
+    border-radius: 8px;
+    background: #cb101f;
+    color: white;
+    font-size: 15px;
+    font-family: "Poppins", sans-serif;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.motivo-cancelar:hover, .motivo-confirmar:hover {
+    background: #4d4c4e;
+    transform: translateY(-1px);
+}
+
+.motivo-cancelar:active , .motivo-confirmar:active {
+    transform: translateY(0);
+}
+
