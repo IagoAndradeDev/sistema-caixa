@@ -138,13 +138,44 @@ body {
     -webkit-mask: url("/files/icons/ajustes.svg") center / contain no-repeat;
 }
 
+.icon-ajustes-button {
+    width: 20px;
+    height: 20px;
+    background-color: #00582c;
+    mask: url("/files/icons/ajustes.svg") center / contain no-repeat;
+    -webkit-mask: url("/files/icons/ajustes.svg") center / contain no-repeat;
+}
+
 .icon-sucesso {
     width: 20px;
     height: 20px;
-    display: inline-block;
-    background-color: #000000;
+    background-color: #f8f8f8;
     mask: url("/files/icons/sucesso.svg") center / contain no-repeat;
     -webkit-mask: url("/files/icons/sucesso.svg") center / contain no-repeat;
+}
+
+.icon-voltar {
+    width: 20px;
+    height: 20px;
+    background-color: #00582c;
+    mask: url("/files/icons/voltar.svg") center / contain no-repeat;
+    -webkit-mask: url("/files/icons/voltar.svg") center / contain no-repeat;
+}
+
+.icon-relatorio {
+    width: 20px;
+    height: 20px;
+    background-color: #00582c;
+    mask: url("/files/icons/relatorio.svg") center / contain no-repeat;
+    -webkit-mask: url("/files/icons/relatorio.svg") center / contain no-repeat;
+}
+
+.icon-fechamento {
+    width: 20px;
+    height: 20px;
+    background-color: #00582c;
+    mask: url("/files/icons/fechamento.svg") center / contain no-repeat;
+    -webkit-mask: url("/files/icons/fechamento.svg") center / contain no-repeat;
 }
 
 .menu a:is(:hover, :active) {
@@ -235,6 +266,7 @@ body {
     border-radius: 10px;
     display: flex;
     flex-direction: column;
+    gap: 5px;
 }
 
 .conteiner-nota {
@@ -259,16 +291,17 @@ body {
 }
 
 .box-fechamentos {
-    margin: 10px;
-    display: flex;
-    flex-direction: column;
-}
-
-.box-resultado {
-    margin: 10px;
     display: flex;
     flex-direction: column;
     gap: 5px;
+    margin: 0px 10px;
+}
+
+.box-resultado {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    margin: 0px 10px;
 }
 
 .box-valores-sistema h3, .box-valores-maquina h3, .box-valores-ajustes h3, .box-fechamentos h3 {
@@ -282,6 +315,8 @@ body {
     gap: 10px;
     margin: 10px 10px;
 }
+
+
 
 .back-icon {
     display: flex;
@@ -335,11 +370,10 @@ body {
     width: 100%;
 }
 
+
 .box-linha-fechamentos {
     display: flex;
     flex-direction: column;
-    width: 100%;
-    margin-left: 10px;
 }
 
 .linha-fechamentos {
@@ -390,13 +424,14 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
+    padding-left: 10px;
+    gap: 10px;
     height: 45px;
     border-radius: 10px;
     background-color: rgba(0, 100, 0, 0.100);
 }
 
 .valor-final .text, .valor-liquido .text {
-    padding-left: 60px;
     font-size: 14px;
     font-weight: 800;
     color: #00582c;
@@ -417,6 +452,13 @@ body {
     background-color: #f8f8f8;
     border-radius: 10px;
     display: flex;    
+}
+
+.ajuste-button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
 }
 
 .btn-ajuste , .btn-fechar , .btn-voltar  {
@@ -465,8 +507,6 @@ body {
     background-color: rgba(0, 100, 0, 0.400);
     transform: scale(0.95);
     border: 1px solid #00582c;
-    color: #00582c;
-    
 }
 
 
@@ -479,7 +519,7 @@ body {
 .btn-voltar button {
     width: 100%;
     height: 40px;  
-    color: #3d3d3d;
+    color: #00582c;
     border: 1px solid #00582c;
     border-radius: 8px;
     font-size: 14px;
@@ -507,7 +547,7 @@ body {
     width: 50px;
     height: 50px;
     border: 5px solid #eee;
-    border-top: 5px solid #6c5ce7;
+    border-top: 5px solid #00582c;
     border-radius: 50%;
     animation: girar 1s linear infinite;
     margin-bottom: 20px;
@@ -534,7 +574,6 @@ body {
     position: fixed;
     inset: 0;
     background: rgba(0, 0, 0, 0.6);
-    
     align-items: center;
     justify-content: center;
     
@@ -549,10 +588,8 @@ body {
     width: 400px;
     max-width: 90%;
     padding: 25px;
-
     background: white;
     border-radius: 12px;
-
     display: flex;
     flex-direction: column;
     gap: 10px;
@@ -596,3 +633,4 @@ body {
 .motivo-cancelar:active , .motivo-confirmar:active {
     transform: translateY(0);
 }
+
