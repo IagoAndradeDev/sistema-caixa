@@ -9,10 +9,10 @@ const elementOptions = {
 
     arquivos: {
         arquivoSistema: {
-            inputSistema: document.querySelector(".box-arquivos .nota-sistema input")
+            inputSistema: document.querySelector("#arquivo-sistema")
         },
         arquivoMaquina: {
-            inputMaquina: document.querySelector(".box-arquivos .nota-maquina input")
+            inputMaquina: document.querySelector("#arquivo-maquina")
         }
     },
 
@@ -45,16 +45,16 @@ const elementOptions = {
 
     valoresAjustes: {
         linhaDinheiro: {
-            numberDinheiro: document.querySelector(".box-valores-ajustes .box-linha-ajustes .linha .number-dinheiro")
+            numberDinheiro: document.querySelector(".box-valores-ajustes .box-linha .linha .number-dinheiro")
         },
         linhaPix: {
-            numberPix: document.querySelector(".box-valores-ajustes .box-linha-ajustes .linha .number-pix")
+            numberPix: document.querySelector(".box-valores-ajustes .box-linha .linha .number-pix")
         },
         linhaCredito: {
-            numberCredito: document.querySelector(".box-valores-ajustes .box-linha-ajustes .linha .number-credito")
+            numberCredito: document.querySelector(".box-valores-ajustes .box-linha .linha .number-credito")
         },
         linhaDebito: {
-            numberDebito: document.querySelector(".box-valores-ajustes .box-linha-ajustes .linha .number-debito")
+            numberDebito: document.querySelector(".box-valores-ajustes .box-linha .linha .number-debito")
         }
     },
 
@@ -654,3 +654,20 @@ function fileToBase64(file) {
         reader.readAsDataURL(file);
     });
 }
+
+const inputSistema = document.querySelector("#arquivo-sistema");
+const nomeSistema = document.querySelector(".nome-arquivo-sistema");
+const inputMaquina = document.querySelector("#arquivo-maquina");
+const nomeMaquina = document.querySelector(".nome-arquivo-maquina");
+
+inputSistema.addEventListener("change", () => {
+    nomeSistema.textContent = inputSistema.files.length
+        ? inputSistema.files[0].name
+        : "Nenhum arquivo escolhido";
+});
+
+inputMaquina.addEventListener("change", () => {
+    nomeMaquina.textContent = inputMaquina.files.length
+        ? inputMaquina.files[0].name
+        : "Nenhum arquivo escolhido";
+});

@@ -11,17 +11,23 @@
     
    <aside class="menu">
         <div class="title">
-            <img src="/files/icons/caixa.svg" class="" width="25" height="25"  >
+            <img src="/icons/caixa.svg" class="" width="25" height="25"  >
             <h2>Caixa</h2>
         </div>
         <p>MENU</p>
         <nav>
-            <a href="#">Início</a>
-            <a href="/notas/notas.html" class="menu-link">
+            <a href="#">
                 <span class="icon-home"></span>
+                Início
+            </a>
+            <a href="/notas/notas.html" class="menu-link">
+                <span class="icon-dinheiro-menu"></span>
                 Notas
             </a>
-            <a href="#">Relatórios</a>
+            <a href="#">
+                <span class="icon-relatorio-menu"></span>
+                Relatórios
+            </a>
         </nav>
     </aside>
     
@@ -47,7 +53,12 @@
                         <h3>Sistema</h3>
                     </div>
                     <div class="nota-sistema">
-                        <input type="file">
+                        <input type="file" id="arquivo-sistema" hidden>
+                        <label for="arquivo-sistema" class="botao-arquivo">
+                            <span class="icon-enviar"></span>
+                            Escolher arquivo
+                        </label>
+                        <span class="nome-arquivo-sistema">Nenhum arquivo escolhido</span>
                     </div>
                     <p>Ex: sistema.jpeg</p>
                 </div>
@@ -59,117 +70,124 @@
                         <h3>Maquininha</h3>
                     </div>
                     <div class="nota-maquina">
-                        <input type="file">
+                        <input type="file" id="arquivo-maquina" hidden>
+                        <label for="arquivo-maquina" class="botao-arquivo">
+                            <span class="icon-enviar"></span>
+                            Escolher arquivo
+                        </label>
+                        <span class="nome-arquivo-maquina">Nenhum arquivo escolhido</span>
                     </div>
                     <p>Ex: maquina.jpeg</p>
                 </div>
             </div>
         </section>
         <section class="valores">
-            <div class="box-valores-sistema">
-                    <div class="titulo">
-                        <div class="back-icon">
-                            <span class="icon-sistema"></span>
+           <div class="box-container">
+                <div class="box-valores-sistema">
+                        <div class="titulo">
+                            <div class="back-icon">
+                                <span class="icon-sistema"></span>
+                            </div>
+                            <h3>Valores Sistema</h3>
                         </div>
-                        <h3>Valores Sistema</h3>
-                    </div>
-                <div class="box-linha">
-                    <div class="linha">
-                        <div class="back-icon">
-                            <span class="icon-dinheiro"></span>
+                    <div class="box-linha">
+                        <div class="linha">
+                            <div class="back-icon">
+                                <span class="icon-dinheiro"></span>
+                            </div>
+                            <p class="text">Dinheiro</p>
+                            <p class="number-dinheiro">R$ 0,00</p>
                         </div>
-                        <p class="text">Dinheiro</p>
-                        <p class="number-dinheiro">R$ 0,00</p>
-                    </div>
-                    <div class="linha">
-                         <div class="back-icon">
-                            <span class="icon-pix"></span>
+                        <div class="linha">
+                            <div class="back-icon">
+                                <span class="icon-pix"></span>
+                            </div>
+                            <p class="text">Pix</p>
+                            <p class="number-pix">R$ 0,00</p>
                         </div>
-                        <p class="text">Pix</p>
-                        <p class="number-pix">R$ 0,00</p>
-                    </div>
-                    <div class="linha">
-                        <div class="back-icon">
-                            <span class="icon-cartao"></span>
+                        <div class="linha">
+                            <div class="back-icon">
+                                <span class="icon-cartao"></span>
+                            </div>
+                            <p class="text">Crédito</p>
+                            <p class="number-credito">R$ 0,00</p>
                         </div>
-                        <p class="text">Crédito</p>
-                        <p class="number-credito">R$ 0,00</p>
-                    </div>
-                    <div class="linha">
-                        <div class="back-icon">
-                            <span class="icon-debito"></span>
+                        <div class="linha">
+                            <div class="back-icon">
+                                <span class="icon-debito"></span>
+                            </div>
+                            <p class="text">Débito</p>
+                            <p class="number-debito">R$ 0,00</p>
                         </div>
-                        <p class="text">Débito</p>
-                        <p class="number-debito">R$ 0,00</p>
-                    </div>
-                </div>
-            </div>
-            <div class="box-valores-maquina">
-                    <div class="titulo">
-                        <div class="back-icon">
-                            <span class="icon-cartao"></span>
-                        </div>
-                        <h3>Valores Máquina</h3>
-                    </div>
-                <div class="box-linha">
-                    <div class="linha">
-                         <div class="back-icon">
-                            <span class="icon-pix"></span>
-                        </div>
-                        <p class="text">Pix</p>
-                        <p class="number-pix">R$ 0,00</p>
-                    </div>
-                    <div class="linha">
-                        <div class="back-icon">
-                            <span class="icon-cartao"></span>
-                        </div>
-                        <p class="text">Crédito</p>
-                        <p class="number-credito">R$ 0,00</p>
-                    </div>
-                    <div class="linha">
-                        <div class="back-icon">
-                            <span class="icon-debito"></span>
-                        </div>
-                        <p class="text">Débito</p>
-                        <p class="number-debito">R$ 0,00</p>
                     </div>
                 </div>
-            </div>
-            <div class="box-valores-ajustes">
-                    <div class="titulo">
-                        <div class="back-icon">
-                            <span class="icon-ajustes"></span>
+                <div class="box-valores-maquina">
+                        <div class="titulo">
+                            <div class="back-icon">
+                                <span class="icon-cartao"></span>
+                            </div>
+                            <h3>Valores Máquina</h3>
                         </div>
-                        <h3>Valores Ajustados</h3>
+                    <div class="box-linha">
+                        <div class="linha">
+                            <div class="back-icon">
+                                <span class="icon-pix"></span>
+                            </div>
+                            <p class="text">Pix</p>
+                            <p class="number-pix">R$ 0,00</p>
+                        </div>
+                        <div class="linha">
+                            <div class="back-icon">
+                                <span class="icon-cartao"></span>
+                            </div>
+                            <p class="text">Crédito</p>
+                            <p class="number-credito">R$ 0,00</p>
+                        </div>
+                        <div class="linha">
+                            <div class="back-icon">
+                                <span class="icon-debito"></span>
+                            </div>
+                            <p class="text">Débito</p>
+                            <p class="number-debito">R$ 0,00</p>
+                        </div>
                     </div>
-                <div class="box-linha">
-                    <div class="linha">
-                         <div class="back-icon">
-                            <span class="icon-dinheiro"></span>
+                </div>
+                <div class="box-valores-ajustes">
+                        <div class="titulo">
+                            <div class="back-icon">
+                                <span class="icon-ajustes"></span>
+                            </div>
+                            <h3>Valores Ajustados</h3>
                         </div>
-                        <p class="text">Dinheiro</p>
-                        <p class="number-dinheiro">R$ 0,00</p>
-                    </div>
-                    <div class="linha">
-                         <div class="back-icon">
-                            <span class="icon-pix"></span>
+                    <div class="box-linha">
+                        <div class="linha">
+                            <div class="back-icon">
+                                <span class="icon-dinheiro"></span>
+                            </div>
+                            <p class="text">Dinheiro</p>
+                            <p class="number-dinheiro">R$ 0,00</p>
                         </div>
-                        <p class="text">Pix</p>
-                        <p class="number-pix">R$ 0,00</p>
-                    </div>
-                    <div class="linha">
-                        <div class="back-icon">
-                            <span class="icon-cartao"></span>
+                        <div class="linha">
+                            <div class="back-icon">
+                                <span class="icon-pix"></span>
+                            </div>
+                            <p class="text">Pix</p>
+                            <p class="number-pix">R$ 0,00</p>
                         </div>
-                        <p class="text">Crédito</p>
-                        <p class="number-credito">R$ 0,00</p>
-                    </div>
-                    <div class="linha">
-                        <div class="back-icon">
-                            <span class="icon-debito"></span>
+                        <div class="linha">
+                            <div class="back-icon">
+                                <span class="icon-cartao"></span>
+                            </div>
+                            <p class="text">Crédito</p>
+                            <p class="number-credito">R$ 0,00</p>
                         </div>
-                        <p class="text">Débito</p>
-                        <p class="number-debito">R$ 0,00</p>
+                        <div class="linha">
+                            <div class="back-icon">
+                                <span class="icon-debito"></span>
+                            </div>
+                            <p class="text">Débito</p>
+                            <p class="number-debito">R$ 0,00</p>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -184,19 +202,19 @@
                     </div>
                     <div class="box-linha-fechamentos">
                         <div class="linha-fechamentos">
-                            <p>Caixa anterior</p>
+                            <p class="text">Caixa anterior</p>
                             <p class="number-caixa-anterior">R$ 0,00</p>
                         </div>
                         <div class="linha-fechamentos">
-                            <p>Caixa esperado</p>
+                            <p class="text">Caixa esperado</p>
                             <p class="number-caixa-esperado">R$ 0,00</p>
                         </div>
                         <div class="linha-fechamentos">
-                            <p>Caixa atual</p>
+                            <p class="text">Caixa atual</p>
                             <p class="number-caixa-atual">R$ 0,00</p>
                         </div>
                         <div class="linha-fechamentos">
-                            <p>Dinheiro</p>
+                            <p class="text">Dinheiro</p>
                             <p class="number-dinheiro">R$ 0,00</p>
                         </div>
                     </div>
@@ -250,7 +268,7 @@
             <!-- TELA DE CARREGAMENTO -->
         <div id="Carregamento" class="Carregamento" style="display: none;">
             <div class="spinner"></div>
-            <h2>✨ Preparando tudo para você...</h2>
+            <h2>Preparando tudo para você...</h2>
             <p id="Carregamento-text">A IA está analisando suas informações</p>
         </div>
 

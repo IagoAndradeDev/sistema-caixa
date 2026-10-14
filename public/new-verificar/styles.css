@@ -35,7 +35,7 @@ body {
 .title {
     display: flex;
     align-items: center;
-    padding-left: 15%;
+    padding-left: 10px;
 }
 
 
@@ -43,23 +43,24 @@ body {
     font-size: 10px;
     font-weight: 800;
     color: #6d6d6d;
-    padding-left: 15%;
+    padding-left: 10px;
 }
 
 .menu nav {
+    width: 100%;
     display: flex;
     align-items: center;
     flex-direction: column;
-    gap: 10px;
+    gap: 6px;
 }
 
 .menu a {
-    width: 90%;
+    width: 100%;
     height: 30px;
     display: flex;
     align-items: center;
     gap: 10px;
-    padding-left: 25%;
+    padding-left: 10px;
     font-size: 14px;
     font-weight: 500;
     color: #6d6d6d;
@@ -70,9 +71,9 @@ body {
     width: 20px;
     height: 20px;
     display: inline-block;
-    background-color: #6d6d6d;
-    mask: url("/files/icons/data.svg") center / contain no-repeat;
-    -webkit-mask: url("/files/icons/data.svg") center / contain no-repeat;
+    background-color: #00582c;
+    mask: url("/icons/data.svg") center / contain no-repeat;
+    -webkit-mask: url("/icons/data.svg") center / contain no-repeat;
 }
 
 .icon-home {
@@ -80,8 +81,8 @@ body {
     height: 20px;
     display: inline-block;
     background-color: #6d6d6d;
-    mask: url("/files/icons/home.svg") center / contain no-repeat;
-    -webkit-mask: url("/files/icons/home.svg") center / contain no-repeat;
+    mask: url("/icons/home.svg") center / contain no-repeat;
+    -webkit-mask: url("/icons/home.svg") center / contain no-repeat;
 }
 
 .icon-sistema {
@@ -89,8 +90,8 @@ body {
     height: 20px;
     display: inline-block;
     background-color: #000000;
-    mask: url("/files/icons/sistema.svg") center / contain no-repeat;
-    -webkit-mask: url("/files/icons/sistema.svg") center / contain no-repeat;
+    mask: url("/icons/sistema.svg") center / contain no-repeat;
+    -webkit-mask: url("/icons/sistema.svg") center / contain no-repeat;
 }
 
 .icon-cartao {
@@ -98,8 +99,8 @@ body {
     height: 20px;
     display: inline-block;
     background-color: #000000;
-    mask: url("/files/icons/cartao.svg") center / contain no-repeat;
-    -webkit-mask: url("/files/icons/cartao.svg") center / contain no-repeat;
+    mask: url("/icons/cartao.svg") center / contain no-repeat;
+    -webkit-mask: url("/icons/cartao.svg") center / contain no-repeat;
 }
 
 .icon-pix {
@@ -107,8 +108,8 @@ body {
     height: 20px;
     display: inline-block;
     background-color: #000000;
-    mask: url("/files/icons/pix.svg") center / contain no-repeat;
-    -webkit-mask: url("/files/icons/pix.svg") center / contain no-repeat;
+    mask: url("/icons/pix.svg") center / contain no-repeat;
+    -webkit-mask: url("/icons/pix.svg") center / contain no-repeat;
 }
 
 .icon-dinheiro {
@@ -116,8 +117,17 @@ body {
     height: 20px;
     display: inline-block;
     background-color: #000000;
-    mask: url("/files/icons/dinheiro.svg") center / contain no-repeat;
-    -webkit-mask: url("/files/icons/dinheiro.svg") center / contain no-repeat;
+    mask: url("/icons/dinheiro.svg") center / contain no-repeat;
+    -webkit-mask: url("/icons/dinheiro.svg") center / contain no-repeat;
+}
+
+.icon-dinheiro-menu {
+    width: 20px;
+    height: 20px;
+    display: inline-block;
+    background-color: #6d6d6d;
+    mask: url("/icons/dinheiro.svg") center / contain no-repeat;
+    -webkit-mask: url("/icons/dinheiro.svg") center / contain no-repeat;
 }
 
 .icon-debito {
@@ -125,8 +135,8 @@ body {
     height: 20px;
     display: inline-block;
     background-color: #000000;
-    mask: url("/files/icons/debito.svg") center / contain no-repeat;
-    -webkit-mask: url("/files/icons/debito.svg") center / contain no-repeat;
+    mask: url("/icons/debito.svg") center / contain no-repeat;
+    -webkit-mask: url("/icons/debito.svg") center / contain no-repeat;
 }
 
 .icon-ajustes {
@@ -134,48 +144,65 @@ body {
     height: 20px;
     display: inline-block;
     background-color: #000000;
-    mask: url("/files/icons/ajustes.svg") center / contain no-repeat;
-    -webkit-mask: url("/files/icons/ajustes.svg") center / contain no-repeat;
+    mask: url("/icons/ajustes.svg") center / contain no-repeat;
+    -webkit-mask: url("/icons/ajustes.svg") center / contain no-repeat;
 }
 
 .icon-ajustes-button {
     width: 20px;
     height: 20px;
     background-color: #00582c;
-    mask: url("/files/icons/ajustes.svg") center / contain no-repeat;
-    -webkit-mask: url("/files/icons/ajustes.svg") center / contain no-repeat;
+    mask: url("/icons/ajustes.svg") center / contain no-repeat;
+    -webkit-mask: url("/icons/ajustes.svg") center / contain no-repeat;
 }
 
 .icon-sucesso {
     width: 20px;
     height: 20px;
     background-color: #f8f8f8;
-    mask: url("/files/icons/sucesso.svg") center / contain no-repeat;
-    -webkit-mask: url("/files/icons/sucesso.svg") center / contain no-repeat;
+    mask: url("/icons/sucesso.svg") center / contain no-repeat;
+    -webkit-mask: url("/icons/sucesso.svg") center / contain no-repeat;
 }
 
 .icon-voltar {
     width: 20px;
     height: 20px;
     background-color: #00582c;
-    mask: url("/files/icons/voltar.svg") center / contain no-repeat;
-    -webkit-mask: url("/files/icons/voltar.svg") center / contain no-repeat;
+    mask: url("/icons/voltar.svg") center / contain no-repeat;
+    -webkit-mask: url("/icons/voltar.svg") center / contain no-repeat;
 }
 
 .icon-relatorio {
     width: 20px;
     height: 20px;
     background-color: #00582c;
-    mask: url("/files/icons/relatorio.svg") center / contain no-repeat;
-    -webkit-mask: url("/files/icons/relatorio.svg") center / contain no-repeat;
+    mask: url("/icons/relatorio.svg") center / contain no-repeat;
+    -webkit-mask: url("/icons/relatorio.svg") center / contain no-repeat;
+}
+
+.icon-relatorio-menu {
+    width: 20px;
+    height: 20px;
+    background-color: #6d6d6d;
+    mask: url("/icons/relatorio.svg") center / contain no-repeat;
+    -webkit-mask: url("/icons/relatorio.svg") center / contain no-repeat;
 }
 
 .icon-fechamento {
     width: 20px;
     height: 20px;
     background-color: #00582c;
-    mask: url("/files/icons/fechamento.svg") center / contain no-repeat;
-    -webkit-mask: url("/files/icons/fechamento.svg") center / contain no-repeat;
+    mask: url("/icons/fechamento.svg") center / contain no-repeat;
+    -webkit-mask: url("/icons/fechamento.svg") center / contain no-repeat;
+}
+
+.icon-enviar {
+    width: 20px;
+    height: 20px;
+    display: inline-block;
+    background-color: #000000;
+    mask: url("/icons/enviar.svg") center / contain no-repeat;
+    -webkit-mask: url("/icons/enviar.svg") center / contain no-repeat;
 }
 
 .menu a:is(:hover, :active) {
@@ -229,16 +256,8 @@ body {
     color: #00582c;
 }
 
-.data span {
-    width: 20px;
-    height: 20px;
-    display: inline-block;
-    background-color: #00582c;
-    mask: url("/files/icons/data.svg") center / contain no-repeat;
-    -webkit-mask: url("/files/icons/data.svg") center / contain no-repeat;
-}
 
-.arquivos {
+.arquivos, .valores {
     width: 100%;
     background-color: #f8f8f8;
     border-radius: 10px;
@@ -253,13 +272,6 @@ body {
     padding-left: 10px;
 }
 
-.valores {
-    width: 100%;
-    background-color: #f8f8f8;
-    border-radius: 10px;
-    display: flex;
-}
-
 .fechamentos {
     width: 100%;
     background-color: #f8f8f8;
@@ -269,7 +281,7 @@ body {
     gap: 5px;
 }
 
-.conteiner-nota {
+.conteiner-nota, .box-container {
     display: flex;
 }
 
@@ -317,7 +329,6 @@ body {
 }
 
 
-
 .back-icon {
     display: flex;
     align-items: center;
@@ -332,6 +343,32 @@ body {
     background-color: #00582c;
 }
 
+.nota-sistema, .nota-maquina {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    flex-wrap: wrap;
+    border: 1px solid #d6d6d6;
+    border-radius: 5px;
+    padding: 10px;
+}
+
+.nome-arquivo-sistema, .nome-arquivo-maquina {
+    color: #777;
+    font-size: 12px;
+}
+
+.botao-arquivo {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 12px;
+    padding: 10px 16px;
+    border-radius: 8px;
+    background: #f0f0f0;
+    cursor: pointer;
+}
+
 .nota-sistema input, .nota-maquina input {
     width: 100%;
     height: 60px;
@@ -342,6 +379,7 @@ body {
     padding: 10px;
     cursor: pointer;
 }
+
 
 .nota-sistema input[type="file"]::file-selector-button, .nota-maquina input[type="file"]::file-selector-button {
     width: 30%;
@@ -386,6 +424,11 @@ body {
     font-weight: 500;
     border-bottom: 1px solid rgba(0, 0, 0, 0.040);
 }
+
+.linha-fechamentos .text {
+    padding-left: 10px;
+}
+
 
 .linha {
     width: 90%;
@@ -634,3 +677,53 @@ body {
     transform: translateY(0);
 }
 
+
+@media (max-width: 950px) {
+
+    .conteudo {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .menu {
+        display: none;
+    }
+
+    .valores {
+        flex-direction: column;
+    }
+
+    .data {
+        width: 100px;
+        height: 40px;
+        background-color: rgba(0, 200, 0, 0.1);
+        border-radius: 12px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 0px;
+        padding-left: 0px;
+        margin: 0px 0px 0px 0px;
+    }
+
+    .data p {
+        font-size: 11px;
+        font-weight: 800;
+        color: #00582c;
+    }
+
+    .icon-data {
+        display: none;
+    }
+    
+    .box-container {
+        background-color: #f8f8f8;
+        border-radius: 10px;
+        flex-direction: column;
+    }
+
+
+}
