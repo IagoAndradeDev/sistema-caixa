@@ -6,7 +6,6 @@
     <link rel="stylesheet" href="/notas/notas.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
     <title>Contagem de notas</title>
 </head>
 
@@ -14,7 +13,6 @@
     <div class="caixa">
         <!-- CABECALHO  -->
         <header class="cabecalho">
-            <div class="icone">💰</div>
             <div>
                 <h1>Fechamento de Caixa</h1>
                 <p>Confira os valores antes de finalizar</p>
@@ -30,7 +28,7 @@
         <div class="lista">
             <!-- CONTEINER DAS MOEDAS -->
             <section class="grupo">
-                <h2>🪙 Moedas</h2>
+                <h2>Moedas</h2>
                 <div class="linha-notas">
                     <span>R$ 0,05</span>
                     <input type="number" placeholder="Quantidade" min="0" oninput="valorTotal(0.05, Number(this.value), 'totalMoeda-05')"></label><span class="totalMoeda-05">R$0,00</span>
@@ -56,7 +54,7 @@
 
             <!-- CONTEINER DAS NOTAS -->
             <section class="grupo">
-                <h2>💵 Notas</h2>
+                <h2>Notas</h2>
                 <div class="linha-notas">
                     <span>R$ 2</span>
                     <input type="number" placeholder="Quantidade" min="0" oninput="valorTotal(2, Number(this.value), 'totalNota-2')"></label><span class="totalNota-2">R$0,00</span>

@@ -1,31 +1,29 @@
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap');
+
+
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    font-family: "Plus Jakarta Sans", sans-serif;
 }
 
 
 body {
-    min-height: 100vh;
+    width: 100vw;
+    height: 100vh;
+    background-color: #f1f1f1;
     display: flex;
-    justify-content: center;
-    align-items: center;
-    color: #f9fafb;
-    font-family: "Poppins", sans-serif;
-    font-weight: 400;
-    font-style: normal;
 }
 
 
 /* ESTRUTURA DAS DUAS PAGINAS */
 
 .caixa {
-    width: 1000px;
-    padding: 30px;
-    background: #ffffff;
-    color: #111827;
-    border-radius: 18px;
-    box-shadow:0 20px 50px rgba(0, 0, 0, 0.35);
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+
 }
 
 .cabecalho {
@@ -41,18 +39,7 @@ body {
 
 .cabecalho p {
     color: #2b2b2c;
-    font-size: 15px;
-}
-
-.icone {
-    width: 52px;
-    height: 52px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background: #c4e9d2;
-    border-radius: 8px;
-    font-size: 26px;
+    font-size: 12px;
 }
 
 
@@ -63,7 +50,6 @@ body {
     justify-content: space-between;
     align-items: center;
     padding: 18px;
-    margin-bottom: 25px;
     background: #f0fdf4;
     border: 1px solid #0be060;
     border-radius: 8px;
@@ -71,12 +57,12 @@ body {
 
 .total span {
     color: #166534;
-    font-size: 14px;
+    font-size: 12px;
 }
 
 .total strong {
     color: #15803d;
-    font-size: 22px;
+    font-size: 12px;
 }
 
 
@@ -89,17 +75,12 @@ body {
 }
 
 .grupo {
-    padding: 10px;
     background: #f8fafc;
-    border: 1px solid #e5e7eb;
     border-radius: 8px;
 }
 
 .grupo h2 {
-    font-size: 20px;
-    margin-bottom: 10px;
-    color: #000;
-    text-align: center;
+    font-size: 18px;
 }
 
 
@@ -124,7 +105,7 @@ body {
 
 .resultado strong {
     color: #15803d;
-    font-size: 22px;
+    font-size: 18px;
 }
 
 /* ______________ PAGINA NOTAS ___________________ */
@@ -135,9 +116,11 @@ body {
     grid-template-columns: 90px 1fr 100px;
     align-items: center;
     gap: 10px;
-    margin-bottom: 10px;
 }
 
+.linha-notas span {
+    font-size: 12px;
+}
 
 .linha-notas input {
     width: 100%;
@@ -146,15 +129,14 @@ body {
     border: 1px solid #d1d5db;
     border-radius: 6px;
     outline: none;
-    font-size: 16px;
+    font-size: 12px;
     background: white;
     transition: 0.2s;
 }
 
 .linha-notas input:focus {
     border-color: #21da65;
-    box-shadow:
-        0 0 0 3px rgba(22, 163, 74, 0.12);
+    box-shadow: 0 0 0 3px rgba(22, 163, 74, 0.12);
 }
 
 
@@ -163,15 +145,14 @@ body {
 .zerar, .continuar {
     width: 100%;
     height: 45px;
-    margin-top: 10px;
+    color:#f8f8f8;
     border: none;
     border-radius: 8px;
-    background: #cb101f;
-    color: white;
-    font-size: 15px;
-    font-family: "Poppins", sans-serif;
+    font-size: 12px;
+    font-weight: 600;
+    background-color: #00582c;
     cursor: pointer;
-    transition: 0.2s;
+    transition: transform 0.2s ease;
 }
 
 .continuar:disabled {
@@ -182,8 +163,10 @@ body {
 }
 
 .zerar:hover , .continuar:hover {
-    background: #4d4c4e;
-    transform: translateY(-1px);
+    background-color: rgba(0, 100, 0, 0.100);
+    transform: scale(0.95);
+    border: 1px solid #00582c;
+    color: #00582c;
 }
 
 .zerar:active , .continuar:active {
