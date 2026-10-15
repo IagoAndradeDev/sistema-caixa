@@ -92,14 +92,14 @@ const elementOptions = {
 
 elementOptions.buttons.buttonAjustar.addEventListener("click", verificarCaixa)
 elementOptions.buttons.buttonFechar.addEventListener("click", fechar)
-elementOptions.buttons.buttonVoltar.addEventListener("click", history.back())
+elementOptions.buttons.buttonVoltar.addEventListener("click", () => history.back())
 
 /// Tela de carregamento
 let intervaloIA;
 
 function carregarIA(ativo) { 
     const Carregamento = document.querySelector(".Carregamento");
-    const CarregamentoText = document.getElementById("Carregamento-text");
+    const CarregamentoText = document.querySelector(".Carregamento-text");
 
     if (ativo) {
         Carregamento.style.display = "flex";
