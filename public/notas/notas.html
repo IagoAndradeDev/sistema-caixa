@@ -3,19 +3,46 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/notas/notas.css">
+    <link rel="stylesheet" href="notas.css">
+    <link rel="stylesheet" href="/public/icons/icons.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <title>Contagem de notas</title>
 </head>
 
 <body>
+    <aside class="menu">
+            <div class="title">
+                <img src="/icons/caixa.svg" class="" width="25" height="25"  >
+                <h2>Caixa</h2>
+            </div>
+            <p>MENU</p>
+            <nav>
+                <a href="#">
+                    <span class="icon-home"></span>
+                    Início
+                </a>
+                <a href="/notas/notas.html" class="menu-link">
+                    <span class="icon-dinheiro-menu"></span>
+                    Notas
+                </a>
+                <a href="#">
+                    <span class="icon-relatorio-menu"></span>
+                    Relatórios
+                </a>
+            </nav>
+        </aside>
+
     <div class="caixa">
         <!-- CABECALHO  -->
-        <header class="cabecalho">
-            <div>
-                <h1>Fechamento de Caixa</h1>
-                <p>Confira os valores antes de finalizar</p>
+        <header class="cabeçalho">
+            <div class="texto">
+                <h1>Contagem de notas</h1>
+                <p>Insira os valores corretamente para evitar erros.</p>
+            </div>
+            <div class="data">
+                <span class="icon-data"></span>
+                <p>01/01/2026</p>
             </div>
         </header>
         <!-- PUXAR VALOR ANTERIOR -->
@@ -28,56 +55,81 @@
         <div class="lista">
             <!-- CONTEINER DAS MOEDAS -->
             <section class="grupo">
-                <h2>Moedas</h2>
-                <div class="linha-notas">
-                    <span>R$ 0,05</span>
-                    <input type="number" placeholder="Quantidade" min="0" oninput="valorTotal(0.05, Number(this.value), 'totalMoeda-05')"></label><span class="totalMoeda-05">R$0,00</span>
+                <div class="titulo">
+                    <div class="back-icon">
+                        <span class="icon-dinheiro"></span>
+                    </div>
+                    <h3>Moedas</h3>
                 </div>
-                <div class="linha-notas">
-                    <span>R$ 0,10</span>
-                    <input type="number" placeholder="Quantidade" min="0" oninput="valorTotal(0.10, Number(this.value), 'totalMoeda-10')"></label><span class="totalMoeda-10">R$0,00</span>
-                </div>
-                <div class="linha-notas">
-                    <span>R$ 0,25</span>
-                    <input type="number" placeholder="Quantidade" min="0" oninput="valorTotal(0.25, Number(this.value), 'totalMoeda-25')"></label><span class="totalMoeda-25">R$0,00</span>
-                </div>
-                <div class="linha-notas">
-                    <span>R$ 0,50</span>
-                    <input type="number" placeholder="Quantidade" min="0" oninput="valorTotal(0.50, Number(this.value), 'totalMoeda-50')"></label><span class="totalMoeda-50">R$0,00</span>
-                </div>
-                <div class="linha-notas">
-                    <span>R$ 1,00</span>
-                    <input type="number" placeholder="Quantidade" min="0" oninput="valorTotal(1, Number(this.value), 'totalMoeda-1')"></label><span class="totalMoeda-1">R$0,00</span>
+                <div class="box-linhas">
+                    <div class="linha-notas">
+                        <span>R$ 0,05</span>
+                        <input type="number" placeholder="Quantidade" min="0" max="200" oninput="valorTotal(0.05, Number(this.value), 'totalMoeda-05')">
+                        <label class="totalMoeda-05">R$0,00</label>
+                    </div>
+                    <div class="linha-notas">
+                        <span>R$ 0,10</span>
+                        <input type="number" placeholder="Quantidade" min="0" max="200" oninput="valorTotal(0.10, Number(this.value), 'totalMoeda-10')">
+                        <label class="totalMoeda-10">R$0,00</label>
+                    </div>
+                    <div class="linha-notas">
+                        <span>R$ 0,25</span>
+                        <input type="number" placeholder="Quantidade" min="0" max="200" oninput="valorTotal(0.25, Number(this.value), 'totalMoeda-25')">
+                        <label class="totalMoeda-25">R$0,00</label>
+                    </div>
+                    <div class="linha-notas">
+                        <span>R$ 0,50</span>
+                        <input type="number" placeholder="Quantidade" min="0" max="200" oninput="valorTotal(0.50, Number(this.value), 'totalMoeda-50')">
+                        <label class="totalMoeda-50">R$0,00</label>
+                    </div>
+                    <div class="linha-notas">
+                        <span>R$ 1,00</span>
+                        <input type="number" placeholder="Quantidade" min="0" max="200" oninput="valorTotal(1, Number(this.value), 'totalMoeda-1')">
+                        <label class="totalMoeda-1">R$0,00</label>
+                    </div>
                 </div>
             </section>
 
 
             <!-- CONTEINER DAS NOTAS -->
             <section class="grupo">
-                <h2>Notas</h2>
-                <div class="linha-notas">
-                    <span>R$ 2</span>
-                    <input type="number" placeholder="Quantidade" min="0" oninput="valorTotal(2, Number(this.value), 'totalNota-2')"></label><span class="totalNota-2">R$0,00</span>
+            <div class="titulo">
+                <div class="back-icon">
+                    <span class="icon-dinheiro"></span>
                 </div>
-                <div class="linha-notas">
-                    <span>R$ 5</span>
-                    <input type="number" placeholder="Quantidade" min="0" oninput="valorTotal(5, Number(this.value), 'totalNota-5')"></label><span class="totalNota-5">R$0,00</span>
-                </div>
-                <div class="linha-notas">
-                    <span>R$ 10</span>
-                    <input type="number" placeholder="Quantidade" min="0" oninput="valorTotal(10, Number(this.value), 'totalNota-10')"></label><span class="totalNota-10">R$0,00</span>
-                </div>
-                <div class="linha-notas">
-                    <span>R$ 20</span>
-                    <input type="number" placeholder="Quantidade" min="0" oninput="valorTotal(20, Number(this.value), 'totalNota-20')"></label><span class="totalNota-20">R$0,00</span>
-                </div>
-                <div class="linha-notas">
-                    <span>R$ 50</span>
-                    <input type="number" placeholder="Quantidade" min="0" oninput="valorTotal(50, Number(this.value), 'totalNota-50')"></label><span class="totalNota-50">R$0,00</span>
-                </div>
-                <div class="linha-notas">
-                    <span>R$ 100</span>
-                    <input type="number" placeholder="Quantidade" min="0" oninput="valorTotal(100, Number(this.value), 'totalNota-100')"></label><span class="totalNota-100">R$0,00</span>
+                <h3>Notas</h3>
+            </div>
+            <div class="box-linhas">
+                    <div class="linha-notas">
+                        <span>R$ 2,00</span>
+                        <input type="number" placeholder="Quantidade" min="0" max="200" oninput="valorTotal(2, Number(this.value), 'totalNota-2')">
+                    <label class="totalNota-2">R$0,00</label>
+                    </div>
+                    <div class="linha-notas">
+                        <span>R$ 5,00</span>
+                        <input type="number" placeholder="Quantidade" min="0" max="200" oninput="valorTotal(5, Number(this.value), 'totalNota-5')">
+                    <label class="totalNota-5">R$0,00</label>
+                    </div>
+                    <div class="linha-notas">
+                        <span>R$ 10,00</span>
+                        <input type="number" placeholder="Quantidade" min="0" max="200" oninput="valorTotal(10, Number(this.value), 'totalNota-10')">
+                    <label class="totalNota-10">R$0,00</label>
+                    </div>
+                    <div class="linha-notas">
+                        <span>R$ 20,00</span>
+                        <input type="number" placeholder="Quantidade" min="0" max="200" oninput="valorTotal(20, Number(this.value), 'totalNota-20')">
+                    <label class="totalNota-20">R$0,00</label>
+                    </div>
+                    <div class="linha-notas">
+                        <span>R$ 50,00</span>
+                        <input type="number" placeholder="Quantidade" min="0" max="200" oninput="valorTotal(50, Number(this.value), 'totalNota-50')">
+                    <label class="totalNota-50">R$0,00</label>
+                    </div>
+                    <div class="linha-notas">
+                        <span>R$ 100,00</span>
+                        <input type="number" placeholder="Quantidade" min="0" max="200" oninput="valorTotal(100, Number(this.value), 'totalNota-100')">
+                    <label class="totalNota-100">R$0,00</label>
+                    </div>
                 </div>
             </section>
         </div>
@@ -89,16 +141,30 @@
         </div>
 
         <!-- BOTOES -->
-        <button class="zerar" onclick="zerarQuantidades()">
-            Zerar Caixa
-        </button>
-        
-        <button class="continuar" onclick="continuar()">
-            Continuar
-        </button>
+        <div class="box-buttons">
 
+            <div class="btn-ajuste">
+                <button onclick="zerarQuantidades()"> 
+                    <div class="ajuste-button">
+                        <span class="icon-ajustes-button2"></span>
+                        <p>Zerar Caixa</p>
+                    </div>
+                </button>
+            </div>
+
+            <div class="btn-fechar">
+                <button onclick="continuar()"> 
+                    <div class="ajuste-button">
+                        <span class="icon-sucesso"></span>
+                        <p>Continuar</p>
+                    </div>
+                </button>
+            </div>
+
+
+        </div>
     </div>
-<script src="/notas/notas.js"></script>
+<script src="notas.js"></script>
 </body>
 </html>
 

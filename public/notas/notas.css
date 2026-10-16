@@ -17,12 +17,103 @@ body {
 }
 
 
-/* ESTRUTURA DAS DUAS PAGINAS */
-
-.caixa {
+.menu {
+    width: 15%;
+    height: 100%;
+    background-color: #f8f8f8;
     display: flex;
     flex-direction: column;
     gap: 10px;
+}
+
+.menu h2 {
+    padding-left: 5%;
+    margin: 15px 0px;
+    font-size: 18px;
+    font-weight: 800;
+}
+
+.title {
+    display: flex;
+    align-items: center;
+    padding-left: 10px;
+}
+
+
+.menu p {
+    font-size: 10px;
+    font-weight: 800;
+    color: #6d6d6d;
+    padding-left: 10px;
+}
+
+.menu nav {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.menu a {
+    width: 100%;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding-left: 10px;
+    font-size: 14px;
+    font-weight: 500;
+    color: #6d6d6d;
+    text-decoration: none;
+}
+
+
+.cabeçalho {
+    width: 100%;
+    height: 60px;
+    display: flex;
+    align-items: center;
+}
+
+.texto h1 {
+    font-size: 25px;
+}
+
+.texto p {
+    font-size: 12px;
+    font-weight: 500;
+    color: #6d6d6d;
+}
+
+.data {
+    width: 160px;
+    height: 40px;
+    background-color: rgba(0, 200, 0, 0.1);
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    padding-left: 10px;
+    margin: 0px 0px 0px auto;
+}
+
+.data p {
+    font-size: 12px;
+    font-weight: 800;
+    color: #00582c;
+}
+
+
+/* ESTRUTURA DAS DUAS PAGINAS */
+
+.caixa {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin: 10px;
 
 }
 
@@ -44,6 +135,15 @@ body {
 
 
 /* TOTAL E DATA */
+
+
+.titulo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin: 10px 10px;
+}
+
 
 .total {
     display: flex;
@@ -69,13 +169,20 @@ body {
 /* GRUPOS */
 
 .lista {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 15px;
+    width: 100%;
+    background-color: #f8f8f8;
+    border-radius: 10px;
+    display: flex;
+    gap: 5px;
 }
 
-.grupo {
-    background: #f8fafc;
+
+.grupo {    
+    width: 100%;
+    margin: 10px;
+    display: flex;
+    flex-direction: column;
+    background-color: rgba(0, 100, 0, 0.06);
     border-radius: 8px;
 }
 
@@ -111,15 +218,37 @@ body {
 /* ______________ PAGINA NOTAS ___________________ */
 
 /* INPUT */
-.linha-notas  {
-    display: grid;
-    grid-template-columns: 90px 1fr 100px;
+.box-linhas {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
     align-items: center;
+}
+
+.linha-notas  {
+    width: 90%;
+    display: flex;
+    align-items: center;
+    font-size: 12px;
+    font-weight: 500;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.040);
     gap: 10px;
+
 }
 
 .linha-notas span {
+    width: 100%;
     font-size: 12px;
+    text-align: center;    
+}
+
+.linha-notas label {
+    width: 100%;
+    text-align: center;
+    font-weight: 700;
+    color: #00582c;
+
+
 }
 
 .linha-notas input {
@@ -139,21 +268,54 @@ body {
     box-shadow: 0 0 0 3px rgba(22, 163, 74, 0.12);
 }
 
+.linha-notas span {
+    font-weight: 700;
+}
 
 /* TODOS OS BOTOES */
 
-.zerar, .continuar {
+.box-buttons {
+    display: flex;
+    gap: 10px;
+}
+
+.ajuste-button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+
+.btn-ajuste , .btn-fechar  {
     width: 100%;
-    height: 45px;
+    display: flex;
+    align-items: center;
+}
+
+.btn-fechar button, .btn-ajuste button {
+    width: 100%;
+    height: 40px;  
     color:#f8f8f8;
     border: none;
     border-radius: 8px;
-    font-size: 12px;
+    font-size: 14px;
     font-weight: 600;
     background-color: #00582c;
     cursor: pointer;
     transition: transform 0.2s ease;
 }
+
+
+.btn-ajuste button:hover, .btn-fechar button:hover {
+    background-color: rgba(0, 100, 0, 0.400);
+    transform: scale(0.95);
+    border: 1px solid #00582c;
+}
+
+.btn-ajuste button:active, .btn-fechar button:active {
+    transform: scale(0.90);
+}
+
 
 .continuar:disabled {
     background-color: #ca0a0a;
@@ -162,16 +324,6 @@ body {
     opacity: 0.7;
 }
 
-.zerar:hover , .continuar:hover {
-    background-color: rgba(0, 100, 0, 0.100);
-    transform: scale(0.95);
-    border: 1px solid #00582c;
-    color: #00582c;
-}
-
-.zerar:active , .continuar:active {
-    transform: translateY(0);
-}
 
 /* RESPONSIVO */
 
@@ -193,3 +345,4 @@ body {
     }
 
 }
+

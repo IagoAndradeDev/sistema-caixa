@@ -1,0 +1,146 @@
+.icon-data {
+    width: 20px;
+    height: 20px;
+    display: inline-block;
+    background-color: #00582c;
+    mask: url("data.svg") center / contain no-repeat;
+    -webkit-mask: url("data.svg") center / contain no-repeat;
+}
+
+.icon-home {
+    width: 20px;
+    height: 20px;
+    display: inline-block;
+    background-color: #6d6d6d;
+    mask: url("home.svg") center / contain no-repeat;
+    -webkit-mask: url("home.svg") center / contain no-repeat;
+}
+
+.icon-sistema {
+    width: 20px;
+    height: 20px;
+    display: inline-block;
+    background-color: #000000;
+    mask: url("sistema.svg") center / contain no-repeat;
+    -webkit-mask: url("sistema.svg") center / contain no-repeat;
+}
+
+.icon-cartao {
+    width: 20px;
+    height: 20px;
+    display: inline-block;
+    background-color: #000000;
+    mask: url("cartao.svg") center / contain no-repeat;
+    -webkit-mask: url("cartao.svg") center / contain no-repeat;
+}
+
+.icon-pix {
+    width: 20px;
+    height: 20px;
+    display: inline-block;
+    background-color: #000000;
+    mask: url("pix.svg") center / contain no-repeat;
+    -webkit-mask: url("pix.svg") center / contain no-repeat;
+}
+
+.icon-dinheiro {
+    width: 20px;
+    height: 20px;
+    display: inline-block;
+    background-color: #000000;
+    mask: url("dinheiro.svg") center / contain no-repeat;
+    -webkit-mask: url("dinheiro.svg") center / contain no-repeat;
+}
+
+.icon-dinheiro-menu {
+    width: 20px;
+    height: 20px;
+    display: inline-block;
+    background-color: #6d6d6d;
+    mask: url("dinheiro.svg") center / contain no-repeat;
+    -webkit-mask: url("dinheiro.svg") center / contain no-repeat;
+}
+
+.icon-debito {
+    width: 20px;
+    height: 20px;
+    display: inline-block;
+    background-color: #000000;
+    mask: url("debito.svg") center / contain no-repeat;
+    -webkit-mask: url("debito.svg") center / contain no-repeat;
+}
+
+.icon-ajustes {
+    width: 20px;
+    height: 20px;
+    display: inline-block;
+    background-color: #000000;
+    mask: url("ajustes.svg") center / contain no-repeat;
+    -webkit-mask: url("ajustes.svg") center / contain no-repeat;
+}
+
+.icon-ajustes-button2 {
+    width: 20px;
+    height: 20px;
+    display: inline-block;
+    background-color: #f8f8f8;
+    mask: url("ajustes.svg") center / contain no-repeat;
+    -webkit-mask: url("ajustes.svg") center / contain no-repeat;
+}
+
+.icon-ajustes-button {
+    width: 20px;
+    height: 20px;
+    background-color: #00582c;
+    mask: url("ajustes.svg") center / contain no-repeat;
+    -webkit-mask: url("ajustes.svg") center / contain no-repeat;
+}
+
+.icon-sucesso {
+    width: 20px;
+    height: 20px;
+    background-color: #f8f8f8;
+    mask: url("sucesso.svg") center / contain no-repeat;
+    -webkit-mask: url("sucesso.svg") center / contain no-repeat;
+}
+
+.icon-voltar {
+    width: 20px;
+    height: 20px;
+    background-color: #00582c;
+    mask: url("voltar.svg") center / contain no-repeat;
+    -webkit-mask: url("voltar.svg") center / contain no-repeat;
+}
+
+.icon-relatorio {
+    width: 20px;
+    height: 20px;
+    background-color: #00582c;
+    mask: url("relatorio.svg") center / contain no-repeat;
+    -webkit-mask: url("relatorio.svg") center / contain no-repeat;
+}
+
+.icon-relatorio-menu {
+    width: 20px;
+    height: 20px;
+    background-color: #6d6d6d;
+    mask: url("relatorio.svg") center / contain no-repeat;
+    -webkit-mask: url("relatorio.svg") center / contain no-repeat;
+}
+
+.icon-fechamento {
+    width: 20px;
+    height: 20px;
+    background-color: #00582c;
+    mask: url("fechamento.svg") center / contain no-repeat;
+    -webkit-mask: url("fechamento.svg") center / contain no-repeat;
+}
+
+.icon-enviar {
+    width: 20px;
+    height: 20px;
+    display: inline-block;
+    background-color: #000000;
+    mask: url("enviar.svg") center / contain no-repeat;
+    -webkit-mask: url("enviar.svg") center / contain no-repeat;
+}

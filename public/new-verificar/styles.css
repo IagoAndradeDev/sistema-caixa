@@ -261,8 +261,6 @@ body {
     width: 100%;
     background-color: #f8f8f8;
     border-radius: 10px;
-    display: flex;
-    flex-direction: column;
 }
 
 .arquivos h2, .fechamentos h2 {

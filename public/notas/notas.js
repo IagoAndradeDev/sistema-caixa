@@ -14,7 +14,7 @@ function valorTotal(valor, quantidade, dinheiro) {
     let resultado = valor * quantidade;
     document.querySelector(`.${dinheiro}`).innerText = `R$ ${resultado.toFixed(2).replace(".", ",")}`;
     somarTotal();
-    return resultado;
+
 }
 
 /// Zerar todos os campos de moedas e notas ao mesmo tempo
@@ -28,7 +28,7 @@ function zerarQuantidades(){
 
 function somarTotal() {
     let total = 0;
-    document.querySelectorAll('span[class^="totalMoeda-"], span[class^="totalNota-"]').forEach(span => {let valor = span.innerText.replace("R$", "").replace(",", ".").trim();total += Number(valor) || 0;});
+    document.querySelectorAll('label[class^="totalMoeda-"], label[class^="totalNota-"]').forEach(span => {let valor = span.innerText.replace("R$", "").replace(",", ".").trim();total += Number(valor) || 0;});
     document.querySelector(".resultado strong").innerText = `R$ ${total.toFixed(2).replace(".", ",")}`;
 }
 
