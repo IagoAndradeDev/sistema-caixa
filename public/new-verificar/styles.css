@@ -67,144 +67,6 @@ body {
     text-decoration: none;
 }
 
-.icon-data {
-    width: 20px;
-    height: 20px;
-    display: inline-block;
-    background-color: #00582c;
-    mask: url("/icons/data.svg") center / contain no-repeat;
-    -webkit-mask: url("/icons/data.svg") center / contain no-repeat;
-}
-
-.icon-home {
-    width: 20px;
-    height: 20px;
-    display: inline-block;
-    background-color: #6d6d6d;
-    mask: url("/icons/home.svg") center / contain no-repeat;
-    -webkit-mask: url("/icons/home.svg") center / contain no-repeat;
-}
-
-.icon-sistema {
-    width: 20px;
-    height: 20px;
-    display: inline-block;
-    background-color: #000000;
-    mask: url("/icons/sistema.svg") center / contain no-repeat;
-    -webkit-mask: url("/icons/sistema.svg") center / contain no-repeat;
-}
-
-.icon-cartao {
-    width: 20px;
-    height: 20px;
-    display: inline-block;
-    background-color: #000000;
-    mask: url("/icons/cartao.svg") center / contain no-repeat;
-    -webkit-mask: url("/icons/cartao.svg") center / contain no-repeat;
-}
-
-.icon-pix {
-    width: 20px;
-    height: 20px;
-    display: inline-block;
-    background-color: #000000;
-    mask: url("/icons/pix.svg") center / contain no-repeat;
-    -webkit-mask: url("/icons/pix.svg") center / contain no-repeat;
-}
-
-.icon-dinheiro {
-    width: 20px;
-    height: 20px;
-    display: inline-block;
-    background-color: #000000;
-    mask: url("/icons/dinheiro.svg") center / contain no-repeat;
-    -webkit-mask: url("/icons/dinheiro.svg") center / contain no-repeat;
-}
-
-.icon-dinheiro-menu {
-    width: 20px;
-    height: 20px;
-    display: inline-block;
-    background-color: #6d6d6d;
-    mask: url("/icons/dinheiro.svg") center / contain no-repeat;
-    -webkit-mask: url("/icons/dinheiro.svg") center / contain no-repeat;
-}
-
-.icon-debito {
-    width: 20px;
-    height: 20px;
-    display: inline-block;
-    background-color: #000000;
-    mask: url("/icons/debito.svg") center / contain no-repeat;
-    -webkit-mask: url("/icons/debito.svg") center / contain no-repeat;
-}
-
-.icon-ajustes {
-    width: 20px;
-    height: 20px;
-    display: inline-block;
-    background-color: #000000;
-    mask: url("/icons/ajustes.svg") center / contain no-repeat;
-    -webkit-mask: url("/icons/ajustes.svg") center / contain no-repeat;
-}
-
-.icon-ajustes-button {
-    width: 20px;
-    height: 20px;
-    background-color: #00582c;
-    mask: url("/icons/ajustes.svg") center / contain no-repeat;
-    -webkit-mask: url("/icons/ajustes.svg") center / contain no-repeat;
-}
-
-.icon-sucesso {
-    width: 20px;
-    height: 20px;
-    background-color: #f8f8f8;
-    mask: url("/icons/sucesso.svg") center / contain no-repeat;
-    -webkit-mask: url("/icons/sucesso.svg") center / contain no-repeat;
-}
-
-.icon-voltar {
-    width: 20px;
-    height: 20px;
-    background-color: #00582c;
-    mask: url("/icons/voltar.svg") center / contain no-repeat;
-    -webkit-mask: url("/icons/voltar.svg") center / contain no-repeat;
-}
-
-.icon-relatorio {
-    width: 20px;
-    height: 20px;
-    background-color: #00582c;
-    mask: url("/icons/relatorio.svg") center / contain no-repeat;
-    -webkit-mask: url("/icons/relatorio.svg") center / contain no-repeat;
-}
-
-.icon-relatorio-menu {
-    width: 20px;
-    height: 20px;
-    background-color: #6d6d6d;
-    mask: url("/icons/relatorio.svg") center / contain no-repeat;
-    -webkit-mask: url("/icons/relatorio.svg") center / contain no-repeat;
-}
-
-.icon-fechamento {
-    width: 20px;
-    height: 20px;
-    background-color: #00582c;
-    mask: url("/icons/fechamento.svg") center / contain no-repeat;
-    -webkit-mask: url("/icons/fechamento.svg") center / contain no-repeat;
-}
-
-.icon-enviar {
-    width: 20px;
-    height: 20px;
-    display: inline-block;
-    background-color: #000000;
-    mask: url("/icons/enviar.svg") center / contain no-repeat;
-    -webkit-mask: url("/icons/enviar.svg") center / contain no-repeat;
-}
-
 .menu a:is(:hover, :active) {
     background-color: rgba(233, 235, 233, 0.6);
     transition: background-color 0.2s ease;
@@ -326,20 +188,6 @@ body {
     margin: 10px 10px;
 }
 
-
-.back-icon {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background-color: rgba(0, 100, 0, 0.100);
-    width: 30px;
-    height: 30px;
-    border-radius: 10px;
-}
-
-.back-icon span {
-    background-color: #00582c;
-}
 
 .nota-sistema, .nota-maquina {
     display: flex;
@@ -689,26 +537,19 @@ body {
         display: none;
     }
 
+    .texto h1 {
+        font-size: 18px;
+    }
+
+    .texto p {
+        font-size: 11px;
+    }
+
     .valores {
         flex-direction: column;
     }
 
-    .data {
-        width: 100px;
-        gap: 0px;
-        padding-left: 0px;
-        margin: 0px 0px 0px 0px;
-    }
 
-    .data p {
-        font-size: 11px;
-
-    }
-
-    .icon-data {
-        display: none;
-    }
-    
     .box-container {
         background-color: #f8f8f8;
         border-radius: 10px;

@@ -1,4 +1,23 @@
 /// =========== INICIANDO FUNCOES VOLTADAS PARA PAGINA NOTAS
+const elementOptions = {
+    data: {
+        dataHoje: document.querySelector(".data p")
+    },
+
+    resultadoCaixa: {
+        linhaValorFinal: {
+            numberValorFinal: document.querySelector(".box-resultado .resultado strong")
+        },
+        linhaValorAnterior: {
+            numberValorAnterior: document.querySelector(".box-resultado .total strong")
+        }
+    },
+
+    buttons: {
+        buttonZerar: document.querySelector(".btn-ajuste button"),
+        buttonContinuar: document.querySelector(".btn-continuar button"),
+    }
+};
 
 /// Iniciar Junto com o SITE
 
@@ -21,7 +40,7 @@ function valorTotal(valor, quantidade, dinheiro) {
 
 function zerarQuantidades(){
     document.querySelectorAll("input").forEach(input => {input.value = "";});
-    document.querySelectorAll(".totalMoeda-05, .totalMoeda-10, .totalMoeda-25, .totalMoeda-50, .totalMoeda-1, .totalNota-2, .totalNota-5, .totalNota-10, .totalNota-20, .totalNota-50, .totalNota-100, .resultado strong").forEach(total => {total.innerText = "R$0,00";});
+    document.querySelectorAll(".totalMoeda-05, .totalMoeda-10, .totalMoeda-25, .totalMoeda-50, .totalMoeda-1, .totalNota-2, .totalNota-5, .totalNota-10, .totalNota-20, .totalNota-50, .totalNota-100, .resultado strong").forEach(total => {total.innerText = "R$ 0,00";});
 }
 
 /// Pega a soma de todos os valores e ja coloca o valor total separado
@@ -29,7 +48,7 @@ function zerarQuantidades(){
 function somarTotal() {
     let total = 0;
     document.querySelectorAll('label[class^="totalMoeda-"], label[class^="totalNota-"]').forEach(span => {let valor = span.innerText.replace("R$", "").replace(",", ".").trim();total += Number(valor) || 0;});
-    document.querySelector(".resultado strong").innerText = `R$ ${total.toFixed(2).replace(".", ",")}`;
+    elementOptions.resultadoCaixa.linhaValorFinal.numberValorFinal.innerText = `R$ ${total.toFixed(2).replace(".", ",")}`;
 }
 
 /// Dar inicio a data e colocar na tela
@@ -37,7 +56,7 @@ function somarTotal() {
 function iniciarData(){
     const hoje = new Date();
     const data = hoje.toLocaleDateString('pt-BR');
-    const botao = document.querySelector('.data strong');
+    const botao = elementOptions.data.dataHoje
 
     if (botao){
         botao.textContent = data;
@@ -67,7 +86,6 @@ async function salvarCaixa(valor) {
 
     const resultado = await resposta.json();
     const idFechamento = resultado.id;
-    console.log(idFechamento)
     sessionStorage.setItem("idFechamento", idFechamento);
     return resultado;
 }
@@ -78,7 +96,7 @@ async function carregarUltimoCaixa() {
     const resposta = await fetch("/api/valor-caixa");
     const dados = await resposta.json();
     const ultimo_caixa = Number(dados.caixa_atual) || 0;
-    const elemento = document.querySelector(".total strong");
+    const elemento = elementOptions.resultadoCaixa.linhaValorAnterior.numberValorAnterior;
 
     if (elemento) {
         elemento.innerText =
@@ -102,7 +120,7 @@ async function continuar() {
     document.querySelectorAll('span[class^="totalMoeda-"], span[class^="totalNota-"]').forEach(span => {let valor = span.innerText.replace("R$", "").replace(",", ".").trim();total += Number(valor) || 0;});
     await salvarCaixa(total.toFixed(2));
     iniciarLimiteFechamento();
-    window.location.href = "/verificar/verificar.html"
+    window.location.href = "/new-verificar/index.html"
 }
 
 /// Inicia um fechamento no sistema de fechar para ter evitar qualquer tipo de fechamento em massa
@@ -111,7 +129,7 @@ async function iniciarLimiteFechamento() {
     const resposta = await fetch("/api/tempo-bloqueio");
     const dados_tempo = await resposta.json();
     const bloqueio = dados_tempo.horario_bloqueio;
-    const botao = document.querySelector(".continuar");
+    const botao = elementOptions.buttons.buttonContinuar;
 
     fechamentoBloqueado = true;
 
@@ -144,7 +162,7 @@ async function iniciarLimiteFechamento() {
 /// Atualiza o botao quando ele e bloqueado por tempo
 
 function atualizarTextoBotao() {
-    const botao = document.querySelector(".continuar");
+    const botao = elementOptions.buttons.buttonContinuar;
     const minutos = Math.floor(tempoRestante / 60);
     const segundos = tempoRestante % 60;
 
@@ -152,3 +170,13 @@ function atualizarTextoBotao() {
         botao.innerText = `Aguarde ${String(minutos).padStart(2, "0")}:${String(segundos).padStart(2, "0")}`;
     }
 }
+
+document.addEventListener("DOMContentLoaded", () => {
+    const hoje = new Date();
+    const data = hoje.toLocaleDateString('pt-BR');
+    const botao = elementOptions.data.dataHoje;
+
+    if (botao){
+        botao.textContent = data;
+    }
+});

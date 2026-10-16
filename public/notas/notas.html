@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="notas.css">
-    <link rel="stylesheet" href="/public/icons/icons.css">
+    <link rel="stylesheet" href="/icons/icons.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <title>Contagem de notas</title>
@@ -13,7 +13,9 @@
 <body>
     <aside class="menu">
             <div class="title">
-                <img src="/icons/caixa.svg" class="" width="25" height="25"  >
+                <div class="back-icon">
+                    <span class="icon-caixa"></span>
+                </div>
                 <h2>Caixa</h2>
             </div>
             <p>MENU</p>
@@ -45,12 +47,7 @@
                 <p>01/01/2026</p>
             </div>
         </header>
-        <!-- PUXAR VALOR ANTERIOR -->
-        <div class="total">
-            <span>Valor total do dia anterior</span>
-            <strong>R$ 0,00</strong>
-        </div>
-
+        
         <!-- CONTEINER PRINCIPAL -->
         <div class="lista">
             <!-- CONTEINER DAS MOEDAS -->
@@ -65,84 +62,91 @@
                     <div class="linha-notas">
                         <span>R$ 0,05</span>
                         <input type="number" placeholder="Quantidade" min="0" max="200" oninput="valorTotal(0.05, Number(this.value), 'totalMoeda-05')">
-                        <label class="totalMoeda-05">R$0,00</label>
+                        <label class="totalMoeda-05">R$ 0,00</label>
                     </div>
                     <div class="linha-notas">
                         <span>R$ 0,10</span>
                         <input type="number" placeholder="Quantidade" min="0" max="200" oninput="valorTotal(0.10, Number(this.value), 'totalMoeda-10')">
-                        <label class="totalMoeda-10">R$0,00</label>
+                        <label class="totalMoeda-10">R$ 0,00</label>
                     </div>
                     <div class="linha-notas">
                         <span>R$ 0,25</span>
                         <input type="number" placeholder="Quantidade" min="0" max="200" oninput="valorTotal(0.25, Number(this.value), 'totalMoeda-25')">
-                        <label class="totalMoeda-25">R$0,00</label>
+                        <label class="totalMoeda-25">R$ 0,00</label>
                     </div>
                     <div class="linha-notas">
                         <span>R$ 0,50</span>
                         <input type="number" placeholder="Quantidade" min="0" max="200" oninput="valorTotal(0.50, Number(this.value), 'totalMoeda-50')">
-                        <label class="totalMoeda-50">R$0,00</label>
+                        <label class="totalMoeda-50">R$ 0,00</label>
                     </div>
                     <div class="linha-notas">
                         <span>R$ 1,00</span>
                         <input type="number" placeholder="Quantidade" min="0" max="200" oninput="valorTotal(1, Number(this.value), 'totalMoeda-1')">
-                        <label class="totalMoeda-1">R$0,00</label>
+                        <label class="totalMoeda-1">R$ 0,00</label>
                     </div>
                 </div>
             </section>
-
-
+            
+            
             <!-- CONTEINER DAS NOTAS -->
             <section class="grupo">
-            <div class="titulo">
-                <div class="back-icon">
-                    <span class="icon-dinheiro"></span>
+                <div class="titulo">
+                    <div class="back-icon">
+                        <span class="icon-dinheiro"></span>
+                    </div>
+                    <h3>Notas</h3>
                 </div>
-                <h3>Notas</h3>
-            </div>
-            <div class="box-linhas">
+                <div class="box-linhas">
                     <div class="linha-notas">
                         <span>R$ 2,00</span>
                         <input type="number" placeholder="Quantidade" min="0" max="200" oninput="valorTotal(2, Number(this.value), 'totalNota-2')">
-                    <label class="totalNota-2">R$0,00</label>
+                        <label class="totalNota-2">R$ 0,00</label>
                     </div>
                     <div class="linha-notas">
                         <span>R$ 5,00</span>
                         <input type="number" placeholder="Quantidade" min="0" max="200" oninput="valorTotal(5, Number(this.value), 'totalNota-5')">
-                    <label class="totalNota-5">R$0,00</label>
+                        <label class="totalNota-5">R$ 0,00</label>
                     </div>
                     <div class="linha-notas">
                         <span>R$ 10,00</span>
                         <input type="number" placeholder="Quantidade" min="0" max="200" oninput="valorTotal(10, Number(this.value), 'totalNota-10')">
-                    <label class="totalNota-10">R$0,00</label>
+                        <label class="totalNota-10">R$ 0,00</label>
                     </div>
                     <div class="linha-notas">
                         <span>R$ 20,00</span>
                         <input type="number" placeholder="Quantidade" min="0" max="200" oninput="valorTotal(20, Number(this.value), 'totalNota-20')">
-                    <label class="totalNota-20">R$0,00</label>
+                        <label class="totalNota-20">R$ 0,00</label>
                     </div>
                     <div class="linha-notas">
                         <span>R$ 50,00</span>
                         <input type="number" placeholder="Quantidade" min="0" max="200" oninput="valorTotal(50, Number(this.value), 'totalNota-50')">
-                    <label class="totalNota-50">R$0,00</label>
+                        <label class="totalNota-50">R$ 0,00</label>
                     </div>
                     <div class="linha-notas">
                         <span>R$ 100,00</span>
                         <input type="number" placeholder="Quantidade" min="0" max="200" oninput="valorTotal(100, Number(this.value), 'totalNota-100')">
-                    <label class="totalNota-100">R$0,00</label>
+                        <label class="totalNota-100">R$ 0,00</label>
                     </div>
                 </div>
             </section>
         </div>
-
+        
         <!-- CONTEINER RESULTADO TOTAL -->
-        <div class="resultado">
-            <span>Valor total</span>
-            <strong>R$ 0,00</strong>
+        <div class="box-resultado">
+            <div class="resultado">
+                <span>Valor total</span>
+                <strong>R$ 0,00</strong>
+            </div>
+            <!-- PUXAR VALOR ANTERIOR -->
+            <div class="total">
+                <span>Valor total do dia anterior</span>
+                <strong>R$ 0,00</strong>
+            </div>
         </div>
-
+            
         <!-- BOTOES -->
         <div class="box-buttons">
-
+            
             <div class="btn-ajuste">
                 <button onclick="zerarQuantidades()"> 
                     <div class="ajuste-button">
@@ -152,7 +156,7 @@
                 </button>
             </div>
 
-            <div class="btn-fechar">
+            <div class="btn-continuar">
                 <button onclick="continuar()"> 
                     <div class="ajuste-button">
                         <span class="icon-sucesso"></span>
