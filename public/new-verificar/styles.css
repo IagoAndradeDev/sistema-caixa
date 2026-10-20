@@ -246,12 +246,18 @@ body {
     color: #6d6d6d;
 }
 
-.box-linha {
-    display: flex;
+.box-linha-sistema, .box-linha-maquina, .box-linha-ajustes {
+    width: 100%;
+    display: none;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    width: 100%;
+    transition: display 0.5s ease; 
+}
+
+
+.box-linha-sistema.revelado, .box-linha-maquina.revelado, .box-linha-ajustes.revelado {
+    display: flex;
 }
 
 
@@ -418,44 +424,6 @@ body {
     transition: transform 0.2s ease;
 }
 
-/* TELA DE CARREGAMENTO */
-.Carregamento {
-    position: fixed;
-    inset: 0;
-    background: #fff;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    z-index: 9999;
-    font-family: Arial, sans-serif;
-}
-
-.spinner {
-    width: 50px;
-    height: 50px;
-    border: 5px solid #eee;
-    border-top: 5px solid #00582c;
-    border-radius: 50%;
-    animation: girar 1s linear infinite;
-    margin-bottom: 20px;
-}
-
-@keyframes girar {
-    to {
-        transform: rotate(360deg);
-    }
-}
-
-.Carregamento h2 {
-    margin: 0 0 10px;
-    color: #222;
-}
-
-.Carregamento p {
-    color: #777;
-}
 
 /* CAIXA DE AJUSTE */
 .ajuste-caixa {

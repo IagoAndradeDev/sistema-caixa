@@ -6,6 +6,10 @@ const elementOptions = {
     data: {
         dataHoje: document.querySelector(".data p")
     },
+    dados: {
+        sistemaDados: {},
+        maquinaDados: {}
+    },
 
     arquivos: {
         arquivoSistema: {
@@ -18,43 +22,43 @@ const elementOptions = {
 
     valoresSistema: {
         linhaDinheiro: {
-            numberDinheiro: document.querySelector(".box-valores-sistema .box-linha .linha .number-dinheiro")
+            numberDinheiro: document.querySelector(".box-valores-sistema .box-linha-sistema .linha .number-dinheiro")
         },
         linhaPix: {
-            numberPix: document.querySelector(".box-valores-sistema .box-linha .linha .number-pix")
+            numberPix: document.querySelector(".box-valores-sistema .box-linha-sistema .linha .number-pix")
         },
         linhaCredito: {
-            numberCredito: document.querySelector(".box-valores-sistema .box-linha .linha .number-credito")
+            numberCredito: document.querySelector(".box-valores-sistema .box-linha-sistema .linha .number-credito")
         },
         linhaDebito: {
-            numberDebito: document.querySelector(".box-valores-sistema .box-linha .linha .number-debito")
+            numberDebito: document.querySelector(".box-valores-sistema .box-linha-sistema .linha .number-debito")
         }
     },
 
     valoresMaquina: {
         linhaPix: {
-            numberPix: document.querySelector(".box-valores-maquina .box-linha .linha .number-pix")
+            numberPix: document.querySelector(".box-valores-maquina .box-linha-maquina .linha .number-pix")
         },
         linhaCredito: {
-            numberCredito: document.querySelector(".box-valores-maquina .box-linha .linha .number-credito")
+            numberCredito: document.querySelector(".box-valores-maquina .box-linha-maquina .linha .number-credito")
         },
         linhaDebito: {
-            numberDebito: document.querySelector(".box-valores-maquina .box-linha .linha .number-debito")
+            numberDebito: document.querySelector(".box-valores-maquina .box-linha-maquina .linha .number-debito")
         }
     },
 
     valoresAjustes: {
         linhaDinheiro: {
-            numberDinheiro: document.querySelector(".box-valores-ajustes .box-linha .linha .number-dinheiro")
+            numberDinheiro: document.querySelector(".box-valores-ajustes .box-linha-ajustes .linha .number-dinheiro")
         },
         linhaPix: {
-            numberPix: document.querySelector(".box-valores-ajustes .box-linha .linha .number-pix")
+            numberPix: document.querySelector(".box-valores-ajustes .box-linha-ajustes .linha .number-pix")
         },
         linhaCredito: {
-            numberCredito: document.querySelector(".box-valores-ajustes .box-linha .linha .number-credito")
+            numberCredito: document.querySelector(".box-valores-ajustes .box-linha-ajustes .linha .number-credito")
         },
         linhaDebito: {
-            numberDebito: document.querySelector(".box-valores-ajustes .box-linha .linha .number-debito")
+            numberDebito: document.querySelector(".box-valores-ajustes .box-linha-ajustes .linha .number-debito")
         }
     },
 
@@ -94,40 +98,12 @@ elementOptions.buttons.buttonAjustar.addEventListener("click", verificarCaixa)
 elementOptions.buttons.buttonFechar.addEventListener("click", fechar)
 elementOptions.buttons.buttonVoltar.addEventListener("click", () => history.back())
 
-/// Tela de carregamento
-let intervaloIA;
+elementOptions.arquivos.arquivoSistema.inputSistema.addEventListener('change', () => analisarNota())
+elementOptions.arquivos.arquivoMaquina.inputMaquina.addEventListener('change', () => analisarMaquina())
 
-function carregarIA(ativo) { 
-    const Carregamento = document.querySelector(".Carregamento");
-    const CarregamentoText = document.querySelector(".Carregamento-text");
-
-    if (ativo) {
-        Carregamento.style.display = "flex";
-
-        const mensagens = [
-            "A IA está analisando suas informações...",
-            "Organizando os dados...",
-            "Pensando na melhor resposta...",
-            "Quase pronto...",
-            "Finalizando os resultados..."
-        ];
-
-        let i = 0;
-        CarregamentoText.textContent = mensagens[0];
-        clearInterval(intervaloIA);
-
-        intervaloIA = setInterval(() => {
-            i = (i + 1) % mensagens.length;
-            CarregamentoText.textContent = mensagens[i];
-        }, 2500);
-
-    } else {
-        Carregamento.style.display = "none";
-        clearInterval(intervaloIA);
-        intervaloIA = null;
-    }
-
-}
+function formatNumber(valor) {
+    return `R$ ${valor.toFixed(2).replace(".", ",")}`
+}  
 
 let fechamentoBloqueado = false;
 let tempoRestante = 0;
@@ -183,11 +159,14 @@ function atualizarTextoBotao() {
 
 /// Analiza a nota do sistema e coloca o valor analizado na tela, ativando e desativando tela de carregamento
 
+
 async function analisarNota() {
+    const div = document.querySelector(".box-linha-sistema")
     const input = elementOptions.arquivos.arquivoSistema.inputSistema.files[0];
     const arquivo = await fileToBase64(input);
 
-        try {
+    try {
+        console.log(`SISTEMA: Iniciando análise do arquivo: ${input.name}`)
         const mensagem = [
             {
                 role: "user",
@@ -199,19 +178,19 @@ async function analisarNota() {
             Extraia SOMENTE estas informações:
 
             1. Total dinheiro
-            2. Total Pix
-            3. Credito
-            3. Debito
-            4. Total Vendas = Vendas Liquidas - IFOOD
+            2. CREDITO
+            3. DEBITO
+            4. PIX = PIX MAQ + PIX CONTA
+            5. Total Vendas = Vendas Liquidas - IFOOD
 
             Responda EXATAMENTE neste formato JSON:
 
             {
                 "dinheiro": 0,
-                "pix": 0,
                 "credito": 0,
                 "debito": 0,
-                "total_vendas": 0
+                "pix": 0,
+                "vendas": 0
             }
 
             Não coloque nenhum texto antes ou depois do JSON.
@@ -228,27 +207,32 @@ async function analisarNota() {
         });
 
         const dados = JSON.parse(resposta.message.content);
+        elementOptions.dados.sistemaDados = dados
 
-        elementOptions.resultadoCaixa.linhaValorFinal.numberValorFinal.innerText = `R$ ${dados.total_vendas.toFixed(2).replace(".", ",")}`;
-        elementOptions.valoresSistema.linhaDinheiro.numberDinheiro.innerText = `R$ ${dados.dinheiro.toFixed(2).replace(".", ",")}`;
-        elementOptions.valoresSistema.linhaPix.numberPix.innerText = `R$ ${dados.pix.toFixed(2).replace(".", ",")}`;
-        elementOptions.valoresSistema.linhaCredito.numberCredito.innerText = `R$ ${dados.credito.toFixed(2).replace(".", ",")}`;
-        elementOptions.valoresSistema.linhaDebito.numberDebito.innerText = `R$ ${dados.debito.toFixed(2).replace(".", ",")}`;
-        return dados;
+        elementOptions.valoresSistema.linhaDinheiro.numberDinheiro.innerText = formatNumber(dados.dinheiro)
+        elementOptions.valoresSistema.linhaPix.numberPix.innerText = formatNumber(dados.pix)
+        elementOptions.valoresSistema.linhaCredito.numberCredito.innerText = formatNumber(dados.credito)
+        elementOptions.valoresSistema.linhaDebito.numberDebito.innerText =  formatNumber(dados.debito)
+        elementOptions.resultadoCaixa.linhaValorFinal.numberValorFinal.innerText = formatNumber(dados.vendas)
 
+        div.classList.add('revelado')
+        console.log('SISTEMA: Imagem analisada com sucesso!')
     } catch (erro) {
-        console.error("Erro ao analisar:", erro);
-        carregarIA(false)
+        console.error("SISTEMA: Erro ao analisar:", erro);
     }
 }
 
 /// Analiza a nota da maquina e coloca o valor analizado na tela, ativando e desativando tela de carregamento
 
+
+
 async function analisarMaquina() {
+    const div = document.querySelector(".box-linha-maquina")
     const input = elementOptions.arquivos.arquivoMaquina.inputMaquina.files[0];
     const arquivo = await fileToBase64(input);
 
-        try {
+    try {
+        console.log(`MAQUINA: Iniciando análise do arquivo: ${input.name}`)
         const mensagem = [
             {
                 role: "user",
@@ -259,18 +243,18 @@ async function analisarMaquina() {
 
             Extraia SOMENTE estas informações:
 
-            1. Total Pix
-            2. Total Credito
-            3. Total Debito
-            4. Total de vendas
+            1. CREDITO
+            2. DEBITO
+            3. PIX
+            4. VALOR TOTAL 
 
             Responda EXATAMENTE neste formato JSON:
 
             {
-                "pix": 0,
                 "credito": 0,
                 "debito": 0,
-                "total_vendas": 0
+                "pix": 0,
+                "vendas": 0
             }
 
             Não coloque nenhum texto antes ou depois do JSON.
@@ -286,14 +270,16 @@ async function analisarMaquina() {
             model: "gpt-5.6-luna"
         });
         const dados = JSON.parse(resposta.message.content);
+        elementOptions.dados.maquinaDados = dados
 
-        elementOptions.valoresMaquina.linhaPix.numberPix.innerText = `R$ ${dados.pix.toFixed(2).replace(".", ",")}`;
-        elementOptions.valoresMaquina.linhaCredito.numberCredito.innerText = `R$ ${dados.credito.toFixed(2).replace(".", ",")}`;
-        elementOptions.valoresMaquina.linhaDebito.numberDebito.innerText = `R$ ${dados.debito.toFixed(2).replace(".", ",")}`;
-        return dados; 
+        elementOptions.valoresMaquina.linhaCredito.numberCredito.innerText = formatNumber(dados.credito)
+        elementOptions.valoresMaquina.linhaDebito.numberDebito.innerText = formatNumber(dados.debito)
+        elementOptions.valoresMaquina.linhaPix.numberPix.innerText = formatNumber(dados.pix)
+
+        div.classList.add('revelado')
+        console.log('MAQUINA: Imagem analisada com sucesso!')
     } catch (erro) {
-        console.error("Erro ao analisar:", erro);
-        carregarIA(false);
+        console.error("MAQUINA: Erro ao analisar:", erro);
     }
     
 
@@ -303,26 +289,22 @@ async function analisarMaquina() {
 /// Confere os valores do sistema junto ao da maquininha e colocar direto na tela
 
 function conferirCaixa(sistema, maquininha) {
+    const div = document.querySelector(".box-linha-ajustes")
     const ajusteCredito = maquininha.credito - sistema.credito;
     const ajusteDebito = maquininha.debito - sistema.debito;
     const ajustePix = maquininha.pix - sistema.pix;
+    const dinheiroCorrigido = sistema.dinheiro - (ajusteCredito + ajusteDebito + ajustePix)
 
-    const credito = maquininha.credito;
-    const debito = maquininha.debito;
-    const pix = maquininha.pix;
-
-    const dinheiro_sistema = sistema.total_vendas - sistema.credito - sistema.debito - sistema.pix;
-    const dinheiroCorrigido = dinheiro_sistema - ajusteCredito - ajusteDebito - ajustePix;
-
-    elementOptions.valoresAjustes.linhaDinheiro.numberDinheiro.innerText =`R$ ${dinheiroCorrigido.toFixed(2).replace(".", ",")}`;
-    elementOptions.valoresAjustes.linhaPix.numberPix.innerText =`R$ ${ajustePix.toFixed(2).replace(".", ",")}`;
-    elementOptions.valoresAjustes.linhaCredito.numberCredito.innerText = `R$ ${ajusteCredito.toFixed(2).replace(".", ",")}`;
-    elementOptions.valoresAjustes.linhaDebito.numberDebito.innerText =`R$ ${ajusteDebito.toFixed(2).replace(".", ",")}`;
+    elementOptions.valoresAjustes.linhaDinheiro.numberDinheiro.innerText = formatNumber(dinheiroCorrigido)
+    elementOptions.valoresAjustes.linhaCredito.numberCredito.innerText = formatNumber(ajusteCredito)
+    elementOptions.valoresAjustes.linhaDebito.numberDebito.innerText = formatNumber(ajusteDebito)
+    elementOptions.valoresAjustes.linhaPix.numberPix.innerText = formatNumber(ajustePix)
+    div.classList.add('revelado')
 
     return {
-        credito,
-        debito,
-        pix,
+        credito: ajusteCredito,
+        debito: ajusteDebito,
+        pix: ajustePix,
         dinheiro: dinheiroCorrigido
     };
 }
@@ -347,10 +329,8 @@ async function verificarCaixa() {
         return;
     }
 
-    carregarIA(true);
-
-    const sistema = await analisarNota();
-    const maquininha = await analisarMaquina();
+    const sistema = elementOptions.dados.sistemaDados
+    const maquininha = elementOptions.dados.maquinaDados
     const ajustados = conferirCaixa(sistema, maquininha);
     const valorAjustado = ajustados.dinheiro;
     const caixaEsperado = ultimoCaixa + valorAjustado
@@ -358,18 +338,15 @@ async function verificarCaixa() {
 
     if (!sistema || !maquininha) {
         console.error("Não foi possível obter os dados.");
-        carregarIA(false);
         return;
-
     }
 
-    elementOptions.fechamentoCaixa.linhaCaixaAnterior.numberCaixaAnterior.innerText = `R$ ${ultimoCaixa.toFixed(2).replace(".", ",")}`;
-    elementOptions.fechamentoCaixa.linhaCaixaEsperado.numberCaixaEsperado.innerText = `R$ ${caixaEsperado.toFixed(2).replace(".", ",")}`;
-    elementOptions.fechamentoCaixa.linhaCaixaAtual.numberCaixaAtual.innerText = `R$ ${caixaAtual.toFixed(2).replace(".", ",")}`;
-    elementOptions.fechamentoCaixa.linhaDinheiroDia.numberDinheiroDia.innerText = `R$ ${valorAjustado.toFixed(2).replace(".", ",")}`;
-    elementOptions.resultadoCaixa.linhaValorFinal.numberValorFinal.innerText = `R$ ${valorFinal.toFixed(2).replace(".", ",")}`;
+    elementOptions.fechamentoCaixa.linhaCaixaAnterior.numberCaixaAnterior.innerText = formatNumber(ultimoCaixa)
+    elementOptions.fechamentoCaixa.linhaCaixaEsperado.numberCaixaEsperado.innerText = formatNumber(caixaEsperado)
+    elementOptions.fechamentoCaixa.linhaCaixaAtual.numberCaixaAtual.innerText = formatNumber(caixaAtual)
+    elementOptions.fechamentoCaixa.linhaDinheiroDia.numberDinheiroDia.innerText = formatNumber(valorAjustado)
+    elementOptions.resultadoCaixa.linhaValorFinal.numberValorFinal.innerText = formatNumber(valorFinal)
 
-    carregarIA(false);
    // verificarDiferencaCaixa(valorFinal);
 
 }
@@ -671,3 +648,5 @@ inputMaquina.addEventListener("change", () => {
         ? inputMaquina.files[0].name
         : "Nenhum arquivo escolhido";
 });
+
+
