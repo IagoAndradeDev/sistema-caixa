@@ -4,6 +4,10 @@ const elementOptions = {
         dataHoje: document.querySelector(".data p")
     },
 
+    dados: {
+        valorCaixa: 0
+    },
+
     resultadoCaixa: {
         linhaValorFinal: {
             numberValorFinal: document.querySelector(".box-resultado .resultado strong")
@@ -49,6 +53,7 @@ function somarTotal() {
     let total = 0;
     document.querySelectorAll('label[class^="totalMoeda-"], label[class^="totalNota-"]').forEach(span => {let valor = span.innerText.replace("R$", "").replace(",", ".").trim();total += Number(valor) || 0;});
     elementOptions.resultadoCaixa.linhaValorFinal.numberValorFinal.innerText = `R$ ${total.toFixed(2).replace(".", ",")}`;
+    elementOptions.dados.valorCaixa = total
 }
 
 /// Dar inicio a data e colocar na tela
@@ -113,13 +118,11 @@ let intervaloFechamento = null;
 
 async function continuar() {
     if (fechamentoBloqueado) {
-        return;
+        return
     }
 
-    let total = 0;
-    document.querySelectorAll('span[class^="totalMoeda-"], span[class^="totalNota-"]').forEach(span => {let valor = span.innerText.replace("R$", "").replace(",", ".").trim();total += Number(valor) || 0;});
-    await salvarCaixa(total.toFixed(2));
-    iniciarLimiteFechamento();
+    salvarCaixa(elementOptions.dados.valorCaixa)
+    iniciarLimiteFechamento()
     window.location.href = "/new-verificar/index.html"
 }
 
